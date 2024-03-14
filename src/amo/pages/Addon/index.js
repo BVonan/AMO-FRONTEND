@@ -499,7 +499,6 @@ export class AddonBase extends React.Component {
               <AddonInstallError error={this.props.installError} />
 
               <AddonCompatibilityError addon={addon} />
-
               {addon &&
               (addon.status !== STATUS_PUBLIC || addon.is_disabled) ? (
                 <Notice type="error" className="Addon-non-public-notice">
