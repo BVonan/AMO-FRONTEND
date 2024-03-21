@@ -72,10 +72,16 @@
     max-height: 800px;
     font-size: medium;
     color: black;
-    background-color: white;
+    background-color: pink;
     border-radius: 5px;
     padding: 250px;
-   
+    
+  }
+  .Notice-dismisser {
+    position: fixed;
+    top: 27%; 
+    right: 27%;
+    z-index: 9999;
   }
 }
 .Notice-dismisser {
