@@ -46,12 +46,6 @@
 //   }
 // }
 
-// .GetFirefoxBanner-button {
-//   &,
-//   &:link {
-//     color: $link-color;
-//   }
-// }
 
 .GetFirefoxBanner {
  
@@ -81,14 +75,15 @@
     background-color: white;
     border-radius: 5px;
     padding: 250px;
-    
-  }
-  .Notice-dismisser {
-    position: absolute;
-    top: 20%; 
-    right: 20%; 
+   
   }
 }
+.Notice-dismisser {
+  position: absolute;
+  top: 20%; 
+  right: 20%; 
+  z-index: 1001;
+} 
 
 .GetFirefoxBanner-button {
   color: $link-color;
