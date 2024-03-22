@@ -125,7 +125,7 @@ export const GetFirefoxBannerBase = ({
         : i18n.gettext(`To use Android extensions, you'll need
             %(downloadLinkStart)sFirefox for Android%(downloadLinkEnd)s. To
             explore Firefox for desktop add-ons, please %(linkStart)svisit our
-            desktop site%(linkEnd)s.`),
+            desktop site%(linkEnd)s`),
     replacements,
   });
 
