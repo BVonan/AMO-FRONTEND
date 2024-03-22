@@ -1,0 +1,38 @@
+
+  .Notice-content {
+    position: center;
+    max-width: 1000px;
+    max-height: 800px;
+    font-size: medium;
+    color: white;
+    // background-color: pink;
+      /* fallback for old browsers */
+      background: #6a11cb;
+      
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(252, 84, 37, 0.88));
+      
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(252, 84, 37, 0.88));
+    border-radius: 5px;
+    padding: 250px;
+    
+  }
+
+  .Notice-dismisser {
+    position: fixed;
+    color: white;
+    top: 27%; 
+    right: 27%;
+    z-index: 9999;
+
+max-height: 500px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    color: whitesmoke;
+    border-radius: 10px;
+    padding: 350px; 
+    overflow: hidden; 
+  }
+  
+
