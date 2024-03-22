@@ -1,52 +1,5 @@
 @import '~amo/css/styles';
 
-// .GetFirefoxBanner {
-//   @include respond-to(extraLarge) {
-//     border-radius: 0 0 $border-radius-m $border-radius-m;
-//     width: 890px;
-    
-
-//     .Notice-content {
-//       max-width: 590px;
-//       color:red;
-//     }
-//   }
-
-//   border-radius: 0;
-//   box-shadow: 0 1px 7px transparentize($black, 0.5);
-//   color: $grey-90;
-//   font-size: $font-size-s;
-//   left: 50%;
-//   padding: 12px 40px;
-//   position: fixed;
-//   text-align: center;
-//   transform: translate(-50%, 0);
-//   width: 100%;
-//   z-index: 1000;
-//   background-color: aqua;
-  
-
-//   &.Notice {
-//     align-items: center;
-//     display: flex;
-//     justify-content: center;
-
-//     .Notice-icon {
-//       display: none;
-//     }
-
-//     .Notice-column {
-//       margin: auto 0;
-//     }
-
-//     .Notice-dismisser {
-//       position: absolute;
-//       right: 12px;
-//     }
-//   }
-// }
-
-
 .GetFirefoxBanner {
   position: fixed;
   top: 0;
@@ -67,52 +20,40 @@
 }
 
   
-// banner 1
-.Notice-content::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  background-image: url("img/Fx-Browser-icon-fullColor.png"); 
-  background-size:contain; 
-  background-repeat:no-repeat;
-  background-position:center;
-  z-index: -1; 
+.Notice-content {
+  position: center;
+  max-width: 1000px;
+  max-height: 800px;
+  font-size: medium;
+  color: white;
+    /* fallback for old browsers */
+    background: #6a11cb;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(252, 84, 37, 0.88));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(252, 84, 37, 0.88));
+  border-radius: 25px;
+  padding: 250px;
+  
 }
-
 
 .Notice-dismisser {
-position: absolute;
-top: 30%; 
-right: 30%; 
-z-index: 1001;
-color: black;
-padding: 10px;
-border-radius: 10px;
-text-decoration: solid;
-background-color: orangered;
-}
-.GetFirefoxBanner-button {
-display: inline-block;
-padding: 12px 24px;
-background-color: #fff;
-color: blue; /* Firefox blue */
-text-decoration: none;
-border-radius: 5px;
-font-size: 16px;
-transition: background-color 0.3s ease;
+  position: fixed;
+  color: white;
+  top: 27%; 
+  right: 27%;
+  z-index: 9999;
+
+max-height: 500px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: large;
+  color: whitesmoke;
+  border-radius: 10px;
+  padding: 350px; 
+  overflow: hidden; 
 }
 
-.GetFirefoxBanner-button {
-display: inline-block;
-padding: 12px 78px;
-background-color: #fff;
-color: orangered;
-text-decoration: none;
-border-radius: 5px;
-font-size: 16px;
-transition: background-color 0.3s ease;
-}
+
+
