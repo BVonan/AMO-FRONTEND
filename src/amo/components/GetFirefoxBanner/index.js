@@ -120,8 +120,8 @@ export const GetFirefoxBannerBase = ({
   const bannerContent = replaceStringsWithJSX({
     text:
       clientApp === CLIENT_APP_FIREFOX
-        ? i18n.gettext(`To use these add-ons, you'll   =======
-            %(downloadLinkStart)sdownload Firefox%(downloadLinkEnd)s.`)
+        ? i18n.gettext(`To use these add-ons, you'll need to
+            %(downloadLinkStart)s Download Firefox%(downloadLinkEnd)s`)
         : i18n.gettext(`To use Android extensions, you'll need
             %(downloadLinkStart)sFirefox for Android%(downloadLinkEnd)s. To
             explore Firefox for desktop add-ons, please %(linkStart)svisit our
