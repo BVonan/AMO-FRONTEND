@@ -1,14 +1,44 @@
 /* @flow */
 /* global window */
 import React, { useEffect, useState } from 'react';
-import MozillaVPNImage from 'src/amo/components/PopupRotatingAds/img/mozilla-vpn-brand.svg'
-import MozillaVPNAd from 'src/amo/components/PopupRotatingAds/img/mozilla-vpn.svg'
-import MozillaMonitorImage from 'src/amo/components/PopupRotatingAds/img/Monitor_Icon.svg'
-import MozillaMonitorAd from 'src/amo/components/PopupRotatingAds/img/monitor-ad.svg'
-import MozillaFocusImage from 'src/amo/components/PopupRotatingAds/img/mozilla-focus.jpg'
-import MozillaPocketImage from 'src/amo/components/PopupRotatingAds/img/pocket.png'
-import MozillaPocketAd from 'src/amo/components/PopupRotatingAds/img/mozilla-pocket.svg'
-import MozillaRelayImage from 'src/amo/components/PopupRotatingAds/img/mozilla-relay.svg'
+import invariant from 'invariant';
+import { withCookies, Cookies } from 'react-cookie';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { withRouter } from 'react-router-dom';
+
+import Button from 'amo/components/Button';
+import {
+  EXPERIMENT_CONFIG,
+  VARIANT_SHOW,
+  shouldExcludeUser,
+} from 'amo/experiments/20210714_amo_vpn_promo';
+import translate from 'amo/i18n/translate';
+import { getAddonByIdInURL } from 'amo/reducers/addons';
+import tracking from 'amo/tracking';
+import { makeQueryStringWithUTM } from 'amo/utils';
+import {
+  EXPERIMENT_COOKIE_NAME,
+  NOT_IN_EXPERIMENT,
+  defaultCookieConfig,
+} from 'amo/withExperiment';
+import type { RegionCodeType } from 'amo/reducers/api';
+import type { AppState } from 'amo/store';
+import type { I18nType } from 'amo/types/i18n';
+import type {
+  ReactRouterLocationType,
+  ReactRouterMatchType,
+} from 'amo/types/router';
+
+import './styles.scss';
+import MozillaVPNImage from './img/mozilla-vpn-brand.svg'
+import MozillaVPNAd from './img/mozilla-vpn.svg'
+import MozillaMonitorImage from './img/Monitor_Icon.svg'
+import MozillaMonitorAd from './img/monitor-ad.svg'
+import MozillaFocusImage from './img/mozilla-focus.jpg'
+import MozillaPocketImage from './img/pocket.png'
+import MozillaPocketAd from './img/mozilla-pocket.svg'
+import MozillaRelayImage from './img/mozilla-relay.svg'
 
   // Get all the pop-up elements
   const popups = [
