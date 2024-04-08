@@ -24,8 +24,8 @@ import type { UserAgentInfoType } from 'amo/reducers/api';
 import type { AppState } from 'amo/store';
 import type { I18nType } from 'amo/types/i18n';
 import type { ReactRouterLocationType } from 'amo/types/router';
-import relayPhone from './img/relayPhone.png';
-import relay from './img/relay.png';
+import pocketPhone from './img/pocketPhone.png';
+import pocket from './img/pocket.png';
 
 
 
@@ -148,38 +148,38 @@ export const GetFirefoxBannerBase = ({
   <span className="close-btn" onClick={() => this.parentElement.style.display='none'}>&times;</span>
   <div className="popup-content">
     <div className="image-container">
-      <img src={relayPhone} alt="Mozilla Relay" className="product-image" />
+      <img src={pocketPhone} alt="Mozilla monitor" className="product-image" />
     </div>
     <div className="text-container">
       <div className="product-info">
         <div className="product-name">
-          <h1>Firefox Relay <img src={relay} alt="Firefox Pocket" className="product-imag" /></h1>
-          <h2 className="text-gradient">Protect your identity with secure phone and email masking</h2>
+          <h1>Firefox Pocket <img src={pocket} alt="Firefox Pocket" className="product-imag" /></h1>
+          <h2 className="text-gradient">An Award-Winning App From Firefox</h2>
         </div>
         <div className="product-description">
-          <h3>Our secure, easy-to-use email and phone masks help keep your identity private!</h3>
+          <h3>Turn your downtime into quality time. Pocket is the place to save, read and get fueled by the best content on the web.</h3>
         </div>
         <div className="product-features">
           <h3>Key Features:</h3>
           <div className="feature-columns">
             <div className="feature-column">
               <ul>
-              <li>Use Relay email masks and phone masks everywhere</li>
-                                    <br />
-                                    <li>Manage your masks from your Relay dashboard</li>   
+              <li> Pocket strips away clutter and saves the page</li>
+              <li>Organize saved content with tags and folders</li>
+              <li>Seamless integration across devices</li>
               </ul>
             </div>
             <div className="feature-column">
               <ul>
-              <li>We’ll forward emails, phone calls, and texts to you</li>
-                                    <br />
-                                    <li>Relay protects your identity and your inbox with unique email masks</li>
+              <li>Discover new content based on interests:</li>
+              <li>hare saved content with friends and followers</li>
+              <li>Customizable reading experience</li>
               </ul>
             </div>
           </div>
           <div className="button-container">
-          <a href="https://relay.firefox.com">
-              <button className="buttonColor">Get Firefox Relay </button>
+            <a href="https://www.mozilla.org/en-US/firefox/pocket/">
+              <button className="buttonColor">Get Firefox pocket</button>
             </a>
           </div>
         </div>
