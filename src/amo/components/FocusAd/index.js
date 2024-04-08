@@ -24,7 +24,9 @@ import type { UserAgentInfoType } from 'amo/reducers/api';
 import type { AppState } from 'amo/store';
 import type { I18nType } from 'amo/types/i18n';
 import type { ReactRouterLocationType } from 'amo/types/router';
-import FirefoxImage from './img/fx.svg';
+import focus from './img/focus.png';
+import focusPhone2 from './img/focusPhone2.png';
+
 
 
 import './styles.scss';
@@ -143,32 +145,49 @@ export const GetFirefoxBannerBase = ({
       <span className="GetFirefoxBanner-content">{bannerContent}</span>
       {/* Insert HTML content here */}
       <div className="ad">
-        <span className="close-btn" onClick={() => document.querySelector('.ad').style.display='none'}>&times;</span>
-        <div className="popup-content">
-            <div className="image-container">
-                <img src={FirefoxImage} alt="Firefox Logo"  className="product-image" />
-            </div>
-            <div className="text-container">
-                <div className="product-info">
-                    <div className="product-name">
-                        <h1>Firefox</h1>
-                        <h2 className="text-gradient">Simple Browsing</h2>
-                    </div>
-                    <div className="product-description">
-                        <h3>Firefox is your dedicated browser with automatic tracking protection.</h3>
-                    </div>
-                    <div className="product-features">
-                        <h3>In order to use these ads <div className="button-container">
-                            <a href="https://www.mozilla.org/firefox/download/thanks/?s=direct&utm_campaign=amo-fx-cta&utm_content=banner-download-button&utm_medium=referral&utm_source=addons.mozilla.org">
-                                <button id="button">Download Firefox</button>
-                            </a>
-                        </div></h3>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
+  <span className="close-btn" onClick={() => this.parentElement.style.display='none'}>&times;</span>
+  <div className="popup-content">
+    <div className="image-container">
+      <img src={focusPhone2} alt="Mozilla Focus" className="product-image" />
     </div>
+    <div className="text-container">
+      <div className="product-info">
+        <div className="product-name">
+          <h1>Mozilla Focus <img src={focus} alt="Mozilla focus" className="product-imag" /></h1>
+          <h2 className="text-gradient">Simply private mobile browsing</h2>
+        </div>
+        <div className="product-description">
+          <h3>Firefox Focus is your dedicated privacy browser with automatic tracking protection. With Focus, your pages load faster and your data stays private.</h3>
+        </div>
+        <div className="product-features">
+          <h3>Key Features:</h3>
+          <div className="feature-columns">
+            <div className="feature-column">
+              <ul>
+                <li>Easily erase your history, passwords and cookies , so unwanted ads don’t follow you around online</li>
+                <br />
+                <li>Firefox Focus offers next-level privacy by default and it’s backed by Mozilla</li>
+              </ul>
+            </div>
+            <div className="feature-column">
+              <ul>
+                <li>Firefox Focus blocks a wide range of common trackers by default including social trackers</li>
+                <br />
+                <li>Focus removes trackers so the pages you’re viewing require less data and load much faster</li>
+              </ul>
+            </div>
+          </div>
+          <div className="button-container">
+            <a href="https://www.mozilla.org/en-US/firefox/browsers/mobile/focus/">
+              <button className="buttonColor">Get Firefox Focus</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
     </Notice>
   );
 };
