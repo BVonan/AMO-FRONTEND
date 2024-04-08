@@ -24,8 +24,8 @@ import type { UserAgentInfoType } from 'amo/reducers/api';
 import type { AppState } from 'amo/store';
 import type { I18nType } from 'amo/types/i18n';
 import type { ReactRouterLocationType } from 'amo/types/router';
-import pocketPhone from './img/pocketPhone.png';
-import pocket from './img/pocket.png';
+import monitorPhone from './img/monitorPhone2.png';
+import monitor from './img/monitor.png';
 
 
 
@@ -148,38 +148,38 @@ export const GetFirefoxBannerBase = ({
   <span className="close-btn" onClick={() => this.parentElement.style.display='none'}>&times;</span>
   <div className="popup-content">
     <div className="image-container">
-      <img src={pocketPhone} alt="Mozilla monitor" className="product-image" />
+      <img src={monitorPhone} alt="Mozilla monitor" className="product-image" />
     </div>
     <div className="text-container">
       <div className="product-info">
         <div className="product-name">
-          <h1>Firefox Pocket <img src={pocket} alt="Firefox Pocket" className="product-imag" /></h1>
-          <h2 className="text-gradient">An Award-Winning App From Firefox</h2>
+          <h1>Mozilla Focus <img src={monitor} alt="Mozilla monitor" className="product-imag" /></h1>
+          <h2 className="text-gradient">Powerful privacy for peace of mind</h2>
         </div>
         <div className="product-description">
-          <h3>Turn your downtime into quality time. Pocket is the place to save, read and get fueled by the best content on the web.</h3>
+          <h3>There’s a $240 billion industry of data brokers selling your private information for profit. It’s time to take back your privacy.</h3>
         </div>
         <div className="product-features">
           <h3>Key Features:</h3>
           <div className="feature-columns">
             <div className="feature-column">
               <ul>
-              <li> Pocket strips away clutter and saves the page</li>
-              <li>Organize saved content with tags and folders</li>
-              <li>Seamless integration across devices</li>
+              <li>Secure and private browsing</li>
+              <li>Scan 190 data broker sites that may be selling your personal info</li>
+              <li>Remove personal info from sites that are selling it</li>
               </ul>
             </div>
             <div className="feature-column">
               <ul>
-              <li>Discover new content based on interests:</li>
-              <li>hare saved content with friends and followers</li>
-              <li>Customizable reading experience</li>
+              <li>Get alerts when your data has been breached</li>
+              <li>Fix high-risk data breaches</li>
+              <li>Continuous monitoring</li>
               </ul>
             </div>
           </div>
           <div className="button-container">
-            <a href="https://www.mozilla.org/en-US/firefox/pocket/">
-              <button className="buttonColor">Get Firefox pocket</button>
+            <a href="https://monitor.mozilla.org">
+              <button className="buttonColor">Get Mozilla Monitor</button>
             </a>
           </div>
         </div>
