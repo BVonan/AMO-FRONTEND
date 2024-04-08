@@ -133,7 +133,7 @@ body {
 }
 
 .text-gradient {
-  background-image: linear-gradient(to right, #ecce9b, #ab0eba);
+  background-image: linear-gradient(to right, #007bff, #6610f2);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -220,7 +220,7 @@ body {
 }
 
 .buttonColor {
-  background-image: linear-gradient(to right, #ecce9b, #ab0eba);
+  background-image: linear-gradient(to right, #007bff, #6610f2);
   color: #fff;
   border: none;
   padding: 12px 20px;
@@ -234,5 +234,5 @@ body {
 }
 
 button:hover {
-  background: #fff3de;
+  background: #007bff;
 }

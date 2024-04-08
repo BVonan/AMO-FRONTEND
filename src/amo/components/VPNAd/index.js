@@ -24,8 +24,8 @@ import type { UserAgentInfoType } from 'amo/reducers/api';
 import type { AppState } from 'amo/store';
 import type { I18nType } from 'amo/types/i18n';
 import type { ReactRouterLocationType } from 'amo/types/router';
-import pocketPhone from './img/pocketPhone.png';
-import pocket from './img/pocket.png';
+import vpnPhone2 from './img/vpnPhone2.png';
+import vpn from './img/vpn.png';
 
 
 
@@ -148,38 +148,38 @@ export const GetFirefoxBannerBase = ({
   <span className="close-btn" onClick={() => this.parentElement.style.display='none'}>&times;</span>
   <div className="popup-content">
     <div className="image-container">
-      <img src={pocketPhone} alt="Mozilla monitor" className="product-image" />
+      <img src={vpnPhone2} alt="Mozilla VPN" className="product-image"/>
     </div>
     <div className="text-container">
       <div className="product-info">
         <div className="product-name">
-          <h1>Firefox Pocket <img src={pocket} alt="Firefox Pocket" className="product-imag" /></h1>
-          <h2 className="text-gradient">An Award-Winning App From Firefox</h2>
+          <h1>Mozilla VPN <img src={vpn} alt="Mozilla VPN" className="product-imag"/></h1>
+          <h2 className="text-gradient">Powerful privacy for peace of mind</h2>
         </div>
         <div className="product-description">
-          <h3>Turn your downtime into quality time. Pocket is the place to save, read and get fueled by the best content on the web.</h3>
+          <h3>Protect your online privacy with Mozilla's amazing VPN. Stay safe and secure while browsing the web.</h3>
         </div>
         <div className="product-features">
           <h3>Key Features:</h3>
           <div className="feature-columns">
             <div className="feature-column">
-              <ul>
-              <li> Pocket strips away clutter and saves the page</li>
-              <li>Organize saved content with tags and folders</li>
-              <li>Seamless integration across devices</li>
-              </ul>
+            <li>Secure and private browsing</li>
+                                    <li>Access to geo-restricted content</li>
+                                    <li>Connect up to 5 devices</li>
+                                    <li>More than 500 servers in 30+ countries</li>
+                                    <li> Fast network speeds even while gaming</li>
             </div>
             <div className="feature-column">
-              <ul>
-              <li>Discover new content based on interests:</li>
-              <li>hare saved content with friends and followers</li>
-              <li>Customizable reading experience</li>
-              </ul>
+            <li>Fast and reliable connections</li>
+                                    <li>Cross-platform support</li>
+                                    <li>No logging, tracking or sharing of network data</li>
+                                    <li>No bandwidth restrictions or throttling</li>
+                                    <li>Extra security: whole device protection, multi-hop routing & more</li>
             </div>
           </div>
           <div className="button-container">
-            <a href="https://www.mozilla.org/en-US/firefox/pocket/">
-              <button className="buttonColor">Get Firefox pocket</button>
+          <a href="https://www.mozilla.org/en-US/products/vpn/">
+              <button className="buttonColor">Get Mozilla VPN</button>
             </a>
           </div>
         </div>
