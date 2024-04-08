@@ -1,71 +1,178 @@
 @import '~amo/css/styles';
-//updated banner 3-21-24
-.GetFirefoxBanner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1000; 
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: $grey-90;
-  font-size: $font-size-s;
-  padding: 100px; 
-  box-sizing: border-box;
+// .GetFirefoxBanner {
+//   @include respond-to(extraLarge) {
+//     border-radius: 0 0 $border-radius-m $border-radius-m;
+//     width: 890px;
 
-  .Notice-content {
-    position: center;
-    max-width: 1000px;
-    max-height: 500px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: large;
-    color: whitesmoke;
-    border-radius: 10px;
-    padding: 350px; 
-    overflow: hidden; 
-  }
-  
-  .Notice-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    background-image: url("img/Fx-Browser-icon-fullColor.png"); 
-    background-size:contain; 
-    background-repeat:no-repeat;
-    background-position:center;
-    z-index: -1; 
-  }
+//     .Notice-content {
+//       max-width: 590px;
+//     }
+//   }
 
-}
-.Notice-dismisser {
-  position: absolute;
-  top: 30%; 
-  right: 30%; 
-  z-index: 1001;
-  color: black;
-  padding: 10px;
-  border-radius: 10px;
-  text-decoration: solid;
-  background-color: orangered;
-}
+//   border-radius: 0;
+//   box-shadow: 0 1px 7px transparentize($black, 0.5);
+//   color: $grey-90;
+//   font-size: $font-size-s;
+//   left: 50%;
+//   padding: 12px 40px;
+//   position: fixed;
+//   text-align: center;
+//   transform: translate(-50%, 0);
+//   width: 100%;
+//   z-index: 1000;
+
+//   &.Notice {
+//     align-items: center;
+//     display: flex;
+//     justify-content: center;
+
+//     .Notice-icon {
+//       display: none;
+//     }
+
+//     .Notice-column {
+//       margin: auto 0;
+//     }
+
+//     .Notice-dismisser {
+//       position: absolute;
+//       right: 12px;
+//     }
+//   }
+// }
 
 .GetFirefoxBanner-button {
-  display: inline-block;
-  padding: 12px 78px;
-  background-color: #fff;
-  color: orangered;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
+  &,
+  &:link {
+    color: $link-color;
+  }
 }
 
+
+.popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 30px;
+  width: auto;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: 9;
+  animation: popup-show 2s ease-in-out forwards;
+}
+
+@keyframes popup-show {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 30px;
+  max-width: 500px;
+  position: relative;
+  text-align: center;
+}
+
+.closebtn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background-color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.closebtn:hover {
+  color: #f00;
+}
+
+.popup-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.download-button:hover {
+  background-color: #3e8e41;
+}
+
+.popup-content h2 {
+  display: block;
+  text-align: center;
+  position: relative;
+}
+
+.popup-content h5 {
+  display: block;
+  text-align: center;
+  position: relative;
+  font-size: 18px;
+}
+
+.popup-content h5 a {
+  color: blue;
+  text-decoration: none;
+}
+
+.popup-content h5 a:hover {
+  text-decoration: underline;
+}
+
+.popup-content h2::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid red;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -20px;
+}
+
+.extension-container {
+display: flex;
+justify-content: space-between;
+margin-bottom: 10px;
+}
+
+.extension {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+margin: 0 10px; /* Add some spacing between extensions */
+}
+
+.extension img {
+width: 64px; /* Adjust the width as needed */
+height: auto; /* Maintain aspect ratio */
+margin-bottom: 10px; /* Add some spacing between the image and text */
+}
+
+
+/* -------------------------------- */

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
 
+
 import {
   CLIENT_APP_ANDROID,
   CLIENT_APP_FIREFOX,
@@ -24,6 +25,8 @@ import type { UserAgentInfoType } from 'amo/reducers/api';
 import type { AppState } from 'amo/store';
 import type { I18nType } from 'amo/types/i18n';
 import type { ReactRouterLocationType } from 'amo/types/router';
+import PopupManager from 'amo/components/PopupRotatingAds'; 
+
 
 import './styles.scss';
 
@@ -128,8 +131,12 @@ export const GetFirefoxBannerBase = ({
             desktop site%(linkEnd)s.`),
     replacements,
   });
-
+  
+   
+ 
   return (
+    <div>
+    <PopupManager />
     <Notice
       className="GetFirefoxBanner"
       dismissible
@@ -138,9 +145,14 @@ export const GetFirefoxBannerBase = ({
       type="warning"
     >
       <span className="GetFirefoxBanner-content">{bannerContent}</span>
-    </Notice>
+      
+  
+    
+</Notice>
+</div>
   );
 };
+
 
 function mapStateToProps(state: AppState): PropsFromState {
   return {
