@@ -133,7 +133,7 @@ export const GetFirefoxBannerBase = ({
   });
   
    
- 
+
   return (
     <div>
     <PopupManager />
