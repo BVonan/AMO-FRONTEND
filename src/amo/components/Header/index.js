@@ -5,8 +5,8 @@ import { compose } from 'redux';
 import config from 'config';
 import makeClassName from 'classnames';
 
+// original banner
 // import GetFirefoxBanner from 'amo/components/GetFirefoxBanner';
-// import FocusAd from '/amo/components/FocusAd';
 import Link from 'amo/components/Link';
 import SearchForm from 'amo/components/SearchForm';
 import SectionLinks from 'amo/components/SectionLinks';
@@ -24,7 +24,12 @@ import translate from 'amo/i18n/translate';
 import DropdownMenu from 'amo/components/DropdownMenu';
 import DropdownMenuItem from 'amo/components/DropdownMenuItem';
 
-import FocusAd from '../FocusAd/index';
+// import FocusAd from '../FocusAd/index';
+import FirefoxAd from '../FirefoxAd/index';
+// import MonitorAd from '../MonitorAd/index';
+// import PocketAd from '../PocketAd/index';
+// import RelayAd from '../RelayAd/index';
+// import VPNAd from '../VPNAd/index';
 
 import './styles.scss';
 
@@ -237,9 +242,14 @@ export class HeaderBase extends React.Component {
           'Header--loaded-page-is-anonymous': loadedPageIsAnonymous,
         })}
       >
-        {/*  here the banner goes */}
+        {/*  Here is where the banner goes */}
         {/* {!isAddonInstallPage && !forBlog ? <GetFirefoxBanner /> : null} */}
-        {!isAddonInstallPage && !forBlog ? <FocusAd /> : null}
+        {/* {!isAddonInstallPage && !forBlog ? <FocusAd /> : null} */}
+        {!isAddonInstallPage && !forBlog ? <FirefoxAd /> : null}
+        {/* {!isAddonInstallPage && !forBlog ? <MonitorAd /> : null}
+        {!isAddonInstallPage && !forBlog ? <PocketAd /> : null}
+        {!isAddonInstallPage && !forBlog ? <RelayAd /> : null}
+        {!isAddonInstallPage && !forBlog ? <VPNAd /> : null} */}
 
         <div className="Header-wrapper">
           <div className="Header-content">
