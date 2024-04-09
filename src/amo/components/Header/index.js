@@ -5,7 +5,8 @@ import { compose } from 'redux';
 import config from 'config';
 import makeClassName from 'classnames';
 
-import GetFirefoxBanner from 'amo/components/GetFirefoxBanner';
+// import GetFirefoxBanner from 'amo/components/GetFirefoxBanner';
+// import FocusAd from '/amo/components/FocusAd';
 import Link from 'amo/components/Link';
 import SearchForm from 'amo/components/SearchForm';
 import SectionLinks from 'amo/components/SectionLinks';
@@ -22,6 +23,8 @@ import { CLIENT_APP_FIREFOX } from 'amo/constants';
 import translate from 'amo/i18n/translate';
 import DropdownMenu from 'amo/components/DropdownMenu';
 import DropdownMenuItem from 'amo/components/DropdownMenuItem';
+
+import FocusAd from '../FocusAd/index';
 
 import './styles.scss';
 
@@ -234,7 +237,10 @@ export class HeaderBase extends React.Component {
           'Header--loaded-page-is-anonymous': loadedPageIsAnonymous,
         })}
       >
-        {!isAddonInstallPage && !forBlog ? <GetFirefoxBanner /> : null}
+        {/*  here the banner goes */}
+        {/* {!isAddonInstallPage && !forBlog ? <GetFirefoxBanner /> : null} */}
+        {!isAddonInstallPage && !forBlog ? <FocusAd /> : null}
+
         <div className="Header-wrapper">
           <div className="Header-content">
             {isHomePage ? (
