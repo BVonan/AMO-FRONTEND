@@ -136,7 +136,7 @@ export const GetFirefoxBannerBase = ({
  
   return (
     <div>
-    <PopupManager />
+    <PopupManager/>
     <Notice
       className="GetFirefoxBanner"
       dismissible
@@ -145,9 +145,6 @@ export const GetFirefoxBannerBase = ({
       type="warning"
     >
       <span className="GetFirefoxBanner-content">{bannerContent}</span>
-      
-  
-    
 </Notice>
 </div>
   );
