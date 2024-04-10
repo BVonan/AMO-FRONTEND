@@ -24,8 +24,8 @@ import translate from 'amo/i18n/translate';
 import DropdownMenu from 'amo/components/DropdownMenu';
 import DropdownMenuItem from 'amo/components/DropdownMenuItem';
 
-// import FocusAd from '../FocusAd/index';
-import FirefoxAd from '../FirefoxAd/index';
+import FocusAd from '../FocusAd/index';
+// import FirefoxAd from '../FirefoxAd/index';
 // import MonitorAd from '../MonitorAd/index';
 // import PocketAd from '../PocketAd/index';
 // import RelayAd from '../RelayAd/index';
@@ -244,8 +244,8 @@ export class HeaderBase extends React.Component {
       >
         {/*  Here is where the banner goes */}
         {/* {!isAddonInstallPage && !forBlog ? <GetFirefoxBanner /> : null} */}
-        {/* {!isAddonInstallPage && !forBlog ? <FocusAd /> : null} */}
-        {!isAddonInstallPage && !forBlog ? <FirefoxAd /> : null}
+        {!isAddonInstallPage && !forBlog ? <FocusAd /> : null}
+        {/* {!isAddonInstallPage && !forBlog ? <FirefoxAd /> : null} */}
         {/* {!isAddonInstallPage && !forBlog ? <MonitorAd /> : null}
         {!isAddonInstallPage && !forBlog ? <PocketAd /> : null}
         {!isAddonInstallPage && !forBlog ? <RelayAd /> : null}
