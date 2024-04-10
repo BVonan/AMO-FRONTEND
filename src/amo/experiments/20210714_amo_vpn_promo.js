@@ -22,7 +22,11 @@ export const shouldExcludeUser = ({
 export const EXPERIMENT_CONFIG: ExperimentConfig = {
   id: '20210714_amo_vpn_promo',
   variants: [
+<<<<<<< HEAD
     { id: VARIANT_SHOW, percentage: 1.0 },
+=======
+    { id: VARIANT_SHOW, percentage: 1.00},
+>>>>>>> kevinfrontend
     { id: VARIANT_HIDE, percentage: 0 },
     { id: NOT_IN_EXPERIMENT, percentage: 0 },
   ],

@@ -25,6 +25,8 @@ import type { UserAgentInfoType } from 'amo/reducers/api';
 import type { AppState } from 'amo/store';
 import type { I18nType } from 'amo/types/i18n';
 import type { ReactRouterLocationType } from 'amo/types/router';
+import PopupManager from 'amo/components/PopupRotatingAds'; 
+
 
 
 import './styles.scss';
@@ -132,9 +134,16 @@ export const GetFirefoxBannerBase = ({
   });
   
    
+<<<<<<< HEAD
 
   return (
     <div>
+=======
+ 
+  return (
+    <div>
+    <PopupManager/>
+>>>>>>> kevinfrontend
     <Notice
       className="GetFirefoxBanner"
       dismissible
@@ -143,9 +152,12 @@ export const GetFirefoxBannerBase = ({
       type="warning"
     >
       <span className="GetFirefoxBanner-content">{bannerContent}</span>
+<<<<<<< HEAD
       
   
     
+=======
+>>>>>>> kevinfrontend
 </Notice>
 </div>
   );
