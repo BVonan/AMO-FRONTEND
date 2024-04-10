@@ -33,6 +33,13 @@ const PopupManager = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + 5) % 5);
   };
 
+  const closePopup = () => {
+    const popups = document.querySelectorAll('.popup');
+    if (popups[currentIndex]) {
+      popups[currentIndex].style.display = 'none';
+    }
+  };
+
   const VPNAdText = `Surf, stream and get work done on servers in over 30 countries 
 for a secure internet connection with a new perspective.`;
 const MonitorAdText = 'See if you’ve been part of a data breach. If so, let us automatically get your private info back for you and continually monitor your identity for new leaks.';
@@ -48,7 +55,7 @@ const FocusAdText = 'Your dedicated privacy browser with automatic tracking prot
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}>
         <div className="popup-content">
-          <button className="closebtn close-chat">X</button>
+          <button className="closebtn close-chat" onClick={closePopup} >X</button>
           <button id="prevButton1" className="toggleButton" onClick={prevButtonHandler}>Previous Ad</button>
           <div className="ad-area">
             <div className="ad-title">
@@ -75,7 +82,7 @@ const FocusAdText = 'Your dedicated privacy browser with automatic tracking prot
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className="popup-content2">
-          <button className="closebtn" id="close-chat2">X</button>
+          <button className="closebtn" id="close-chat2" onClick={closePopup}>X</button>
           <button id="prevButton2" className="toggleButton" onClick={prevButtonHandler}>Previous Ad</button>
           <div className="ad-area2">
             <div className="ad-title2">
@@ -105,7 +112,7 @@ const FocusAdText = 'Your dedicated privacy browser with automatic tracking prot
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className="popup-content">
-          <button className="closebtn" id="close-chat3">X</button>
+          <button className="closebtn" id="close-chat3" onClick={closePopup}>X</button>
           <button id="prevButton3" className="toggleButton" onClick={prevButtonHandler}>Previous Ad</button>
           <div className="ad-area">
             <div className="ad-title">
@@ -135,7 +142,7 @@ const FocusAdText = 'Your dedicated privacy browser with automatic tracking prot
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className="popup-content">
-          <button className="closebtn" id="close-chat4">X</button>
+          <button className="closebtn" id="close-chat4" onClick={closePopup}>X</button>
           <button id="prevButton4" className="toggleButton" onClick={prevButtonHandler}>Previous Ad</button>
           <div className="ad-area">
             <div id="ad-view">
@@ -160,7 +167,7 @@ const FocusAdText = 'Your dedicated privacy browser with automatic tracking prot
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className="popup-content">
-          <button className="closebtn" id="close-chat5">X</button>
+          <button className="closebtn" id="close-chat5"onClick={closePopup}>X</button>
           <button id="prevButton5" className="toggleButton" onClick={prevButtonHandler}>Previous Ad</button>
           <div className="ad-area">
             <div id="ad-view">

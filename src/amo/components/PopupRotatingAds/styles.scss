@@ -66,41 +66,41 @@
   background-color: #3e8e41;
 }
 
-.popup-content h2 {
-  display: block;
-  text-align: center;
-  position: relative;
-}
+// .popup-content h2 {
+//   display: block;
+//   text-align: center;
+//   position: relative;
+// }
 
-.popup-content h5 {
-  display: block;
-  text-align: center;
-  position: relative;
-  font-size: 18px;
-}
+// .popup-content h5 {
+//   display: block;
+//   text-align: center;
+//   position: relative;
+//   font-size: 18px;
+// }
 
-.popup-content h5 a {
-  color: blue;
-  text-decoration: none;
-}
+// .popup-content h5 a {
+//   color: blue;
+//   text-decoration: none;
+// }
 
-.popup-content h5 a:hover {
-  text-decoration: underline;
-}
+// .popup-content h5 a:hover {
+//   text-decoration: underline;
+// }
 
-.popup-content h2::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid red;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -20px;
-}
+// .popup-content h2::after {
+//   content: "";
+//   display: block;
+//   width: 0;
+//   height: 0;
+//   border-left: 10px solid transparent;
+//   border-right: 10px solid transparent;
+//   border-top: 10px solid red;
+//   position: absolute;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   bottom: -20px;
+// }
 
 .extension-container {
 display: flex;
