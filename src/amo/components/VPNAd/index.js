@@ -154,7 +154,7 @@ export const GetFirefoxBannerBase = ({
       <div className="product-info">
         <div className="product-name">
           <h1>Mozilla VPN <img src={vpn} alt="Mozilla VPN" className="product-imag"/></h1>
-          <h2 className="text-gradient">Powerful privacy for peace of mind</h2>
+          <h2 className="text-gradient-vpn">Powerful privacy for peace of mind</h2>
         </div>
         <div className="product-description">
           <h3>Protect your online privacy with Mozilla's amazing VPN. Stay safe and secure while browsing the web.</h3>
@@ -179,7 +179,7 @@ export const GetFirefoxBannerBase = ({
           </div>
           <div className="button-container">
           <a href="https://www.mozilla.org/en-US/products/vpn/">
-              <button className="buttonColor">Get Mozilla VPN</button>
+              <button className="buttonColorVPN">Get Mozilla VPN</button>
             </a>
           </div>
         </div>

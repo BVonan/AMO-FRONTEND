@@ -154,7 +154,7 @@ export const GetFirefoxBannerBase = ({
       <div className="product-info">
         <div className="product-name">
           <h1>Firefox Pocket <img src={pocket} alt="Firefox Pocket" className="product-imag" /></h1>
-          <h2 className="text-gradient">An Award-Winning App From Firefox</h2>
+          <h2 className="text-gradient-pocket">An Award-Winning App From Firefox</h2>
         </div>
         <div className="product-description">
           <h3>Turn your downtime into quality time. Pocket is the place to save, read and get fueled by the best content on the web.</h3>
@@ -179,7 +179,7 @@ export const GetFirefoxBannerBase = ({
           </div>
           <div className="button-container">
             <a href="https://www.mozilla.org/en-US/firefox/pocket/">
-              <button className="buttonColor">Get Firefox pocket</button>
+              <button className="buttonColorPocket">Get Firefox pocket</button>
             </a>
           </div>
         </div>

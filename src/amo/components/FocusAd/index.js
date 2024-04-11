@@ -154,7 +154,7 @@ export const GetFirefoxBannerBase = ({
       <div className="product-info">
         <div className="product-name">
           <h1>Mozilla Focus <img src={focus} alt="Mozilla focus" className="product-imag" /></h1>
-          <h2 className="text-gradient">Simply private mobile browsing</h2>
+          <h2 className="text-gradient-focus">Simply private mobile browsing</h2>
         </div>
         <div className="product-description">
           <h3>Firefox Focus is your dedicated privacy browser with automatic tracking protection. With Focus, your pages load faster and your data stays private.</h3>
@@ -179,7 +179,7 @@ export const GetFirefoxBannerBase = ({
           </div>
           <div className="button-container">
             <a href="https://www.mozilla.org/en-US/firefox/browsers/mobile/focus/">
-              <button className="buttonColor">Get Firefox Focus</button>
+              <button className="buttonColorFocus">Get Firefox Focus</button>
             </a>
           </div>
         </div>

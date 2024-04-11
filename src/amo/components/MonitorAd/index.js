@@ -154,7 +154,7 @@ export const GetFirefoxBannerBase = ({
       <div className="product-info">
         <div className="product-name">
           <h1>Mozilla Focus <img src={monitor} alt="Mozilla monitor" className="product-imag" /></h1>
-          <h2 className="text-gradient">Powerful privacy for peace of mind</h2>
+          <h2 className="text-gradient-monitor">Powerful privacy for peace of mind</h2>
         </div>
         <div className="product-description">
           <h3>There’s a $240 billion industry of data brokers selling your private information for profit. It’s time to take back your privacy.</h3>
@@ -179,7 +179,7 @@ export const GetFirefoxBannerBase = ({
           </div>
           <div className="button-container">
             <a href="https://monitor.mozilla.org">
-              <button className="buttonColor">Get Mozilla Monitor</button>
+              <button className="buttonColorMonitor">Get Mozilla Monitor</button>
             </a>
           </div>
         </div>

@@ -154,7 +154,7 @@ export const GetFirefoxBannerBase = ({
       <div className="product-info">
         <div className="product-name">
           <h1>Firefox Relay <img src={relay} alt="Firefox Pocket" className="product-imag" /></h1>
-          <h2 className="text-gradient">Protect your identity with secure phone and email masking</h2>
+          <h2 className="text-gradient-relay">Protect your identity with secure phone and email masking</h2>
         </div>
         <div className="product-description">
           <h3>Our secure, easy-to-use email and phone masks help keep your identity private!</h3>
@@ -179,7 +179,7 @@ export const GetFirefoxBannerBase = ({
           </div>
           <div className="button-container">
           <a href="https://relay.firefox.com">
-              <button className="buttonColor">Get Firefox Relay </button>
+              <button className="buttonColorRelay">Get Firefox Relay </button>
             </a>
           </div>
         </div>

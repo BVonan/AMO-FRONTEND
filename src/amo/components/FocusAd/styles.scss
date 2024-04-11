@@ -42,7 +42,7 @@ body {
   height: auto; 
 }
 
-.text-gradient {
+.text-gradient-focus {
   background-image: linear-gradient(to right, #6610f2, #f22e10);
   -webkit-background-clip: text;
   background-clip: text;
@@ -129,7 +129,7 @@ body {
   text-align: center;
 }
 
-.buttonColor {
+.buttonColorFocus {
   background-image: linear-gradient(to right, #6610f2, #f22e10); /* Gradient background */
   color: #fff;
   border: none;
