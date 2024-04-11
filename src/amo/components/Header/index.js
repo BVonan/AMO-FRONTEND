@@ -42,7 +42,7 @@ const Ads = [
   import('../RelayAd/index'),
   import('../VPNAd/index'),
 ];
-export class HeaderBase extends React.Component {\
+export class HeaderBase extends React.Component {
   // for banner ad
   constructor(props) {
     super(props);
