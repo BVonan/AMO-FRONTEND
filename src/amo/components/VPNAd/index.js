@@ -133,6 +133,13 @@ export const GetFirefoxBannerBase = ({
     replacements,
   });
 
+  const dismissAdContent = () => {
+    // code to dismiss or hide the HTML content
+    const htmlContent = document.querySelector('.ad');
+    if (htmlContent) {
+      htmlContent.style.display = 'none'; // Hide the HTML content
+    }
+  };
   
   return (
     <Notice
@@ -145,7 +152,7 @@ export const GetFirefoxBannerBase = ({
       <span className="GetFirefoxBanner-content">{bannerContent}</span>
       {/* Insert HTML content here */}
       <div className="ad">
-  <span className="close-btn" onClick={() => this.parentElement.style.display='none'}>&times;</span>
+      <span className="close-btn" onClick={dismissAdContent}>&times;</span>
   <div className="popup-content">
     <div className="image-container">
       <img src={vpnPhone2} alt="Mozilla VPN" className="product-image"/>
