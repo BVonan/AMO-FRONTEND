@@ -16,15 +16,35 @@ import MozillaRelayImage from './img/mozilla-relay.svg';
 
 
 const PopupManager = () => {
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [countdown, setCountdown] = useState(10); 
 
   useEffect(() => {
     const timerInterval = setInterval(() => {
       if (!isHovered) {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % 5);
+        setCountdown((prevCountdown) => {
+          if (prevCountdown === 0) {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % 5);
+            return 10; // Reset countdown to 10 seconds when reaching 0
+          } else {
+            return prevCountdown - 1;
+          }
+        });
       }
-    }, 5000);
+    }, 1000);
+
+    // old function 
+  // const [currentIndex, setCurrentIndex] = useState(0);
+  // const [isHovered, setIsHovered] = useState(false);
+
+  // useEffect(() => {
+  //   const timerInterval = setInterval(() => {
+  //     if (!isHovered) {
+  //       setCurrentIndex((prevIndex) => (prevIndex + 1) % 5);
+  //     }
+  //   }, 10000);
 
     return () => clearInterval(timerInterval);
   }, [isHovered]);
@@ -47,6 +67,7 @@ const PocketAdText = 'Over 10 million users rely on Pocket to discover and savor
 const RelayAdText = 'Protect your real email address to help control your inbox.';
 const FocusAdText = 'Your dedicated privacy browser with automatic tracking protection and ad blocking.';
 
+const progress = (10 - countdown) * 10;
 
   return (
     
@@ -57,6 +78,8 @@ const FocusAdText = 'Your dedicated privacy browser with automatic tracking prot
         <div className="popup-content">
           <button className="closebtn close-chat" onClick={closePopup} >X</button>
           <button id="prevButton1" className="toggleButton" onClick={prevButtonHandler}>Previous Ad</button>
+          <div className="progress-bar-container">
+        <div className="progress-bar1" style={{ width: `${progress}%` }}/></div>
           <div className="ad-area">
             <div className="ad-title">
               <div className="title">
@@ -84,6 +107,8 @@ const FocusAdText = 'Your dedicated privacy browser with automatic tracking prot
         <div className="popup-content2">
           <button className="closebtn" id="close-chat2" onClick={closePopup}>X</button>
           <button id="prevButton2" className="toggleButton" onClick={prevButtonHandler}>Previous Ad</button>
+          <div className="progress-bar-container">
+        <div className="progress-bar2" style={{ width: `${progress}%` }}/></div>
           <div className="ad-area2">
             <div className="ad-title2">
               <div className="title2">
@@ -114,6 +139,8 @@ const FocusAdText = 'Your dedicated privacy browser with automatic tracking prot
         <div className="popup-content">
           <button className="closebtn" id="close-chat3" onClick={closePopup}>X</button>
           <button id="prevButton3" className="toggleButton" onClick={prevButtonHandler}>Previous Ad</button>
+          <div className="progress-bar-container">
+        <div className="progress-bar3" style={{ width: `${progress}%` }}/></div>
           <div className="ad-area">
             <div className="ad-title">
               <div className="title">
@@ -144,6 +171,8 @@ const FocusAdText = 'Your dedicated privacy browser with automatic tracking prot
         <div className="popup-content">
           <button className="closebtn" id="close-chat4" onClick={closePopup}>X</button>
           <button id="prevButton4" className="toggleButton" onClick={prevButtonHandler}>Previous Ad</button>
+          <div className="progress-bar-container">
+        <div className="progress-bar4" style={{ width: `${progress}%` }}/></div>
           <div className="ad-area">
             <div id="ad-view">
               <img className="monitor-ad-pic" src={MozillaRelayImage} alt="mozilla-relay-ad" />
@@ -169,6 +198,8 @@ const FocusAdText = 'Your dedicated privacy browser with automatic tracking prot
         <div className="popup-content">
           <button className="closebtn" id="close-chat5"onClick={closePopup}>X</button>
           <button id="prevButton5" className="toggleButton" onClick={prevButtonHandler}>Previous Ad</button>
+          <div className="progress-bar-container">
+        <div className="progress-bar5" style={{ width: `${progress}%` }}/></div>
           <div className="ad-area">
             <div id="ad-view">
               <img className="monitor-ad-pic" src={MozillaFocusImage} alt="mozilla-focus-ad" />
