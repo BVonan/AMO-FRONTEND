@@ -7,6 +7,23 @@ body {
   text-align: center;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Adjust the alpha value to control transparency */
+  z-index: 999; /* Ensure the overlay is above other content */
+  display: none; /* Initially hide the overlay */
+}
+
+.show-overlay {
+  display: block; /* Show the overlay */
+}
+
+
+
 .ad {
   position: fixed;
   top: 50%;
@@ -18,6 +35,8 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   width: 1000px;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
 }
 
 .product-name h1 {
