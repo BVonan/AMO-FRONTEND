@@ -5,7 +5,8 @@
 }
 
 .LandingPage-header {
-  background-color: $white;
+  background: rgb(28,0,47);
+  background: linear-gradient(90deg, rgba(28,0,47,1) 47%, rgba(130,104,142,0.9626444327731093) 73%);
   border-radius: $border-radius-default;
   margin-bottom: 12px;
   padding: 24px;
@@ -29,7 +30,7 @@
 
 .LandingPage-addonType-name {
   @include font-bold;
-
+  color:white;
   font-size: $font-size-heading-s;
   margin: 0 0 6px;
 
@@ -41,6 +42,7 @@
 
 .LandingPage-heading-content {
   @include font-regular;
+  color:white;
 
   font-size: $font-size-s;
   margin: 0;
