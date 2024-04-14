@@ -38,7 +38,7 @@
 .Categories-link:visited,
 .Categories-link:hover,
 .Categories-link:active {
-  border-radius: 5px;
+  border-radius: 20px;
   color: #fff;
   display: inline-block;
   font-size: $font-size-s;
@@ -52,11 +52,11 @@
 
 @for $i from 1 through 12 {
   .Categories--category-color-#{$i} {
-    background: nth($category-colors, $i);
+    background: #3443fc;
 
     &:focus,
     &:hover {
-      background: darken(nth($category-colors, $i), 20);
+      background: #8088fc;
     }
   }
 }
