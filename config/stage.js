@@ -37,8 +37,11 @@ module.exports = {
     },
   },
 
+  
   allowErrorSimulation: true,
   ga4DebugMode: true,
+  
 
   extensionWorkshopUrl: 'https://extensionworkshop.allizom.org',
 };
+
