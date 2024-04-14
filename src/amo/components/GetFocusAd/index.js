@@ -1,4 +1,3 @@
-/* @flow */
 import React, { useState } from 'react';
 
 import { connect } from 'react-redux';
@@ -25,8 +24,8 @@ import type { UserAgentInfoType } from 'amo/reducers/api';
 import type { AppState } from 'amo/store';
 import type { I18nType } from 'amo/types/i18n';
 import type { ReactRouterLocationType } from 'amo/types/router';
-import vpnPhone2 from './img/vpnPhone2.png';
-import vpn from './img/vpn.png';
+import focus from './img/focus.png';
+import focusPhone2 from './img/focusPhone2.png';
 
 import './styles.scss';
 
@@ -55,14 +54,14 @@ type InternalProps = {|
   location: ReactRouterLocationType,
 |};
 
-export const GetFirefoxBannerBase = ({
+export const GetFocusAdBase = ({
   _tracking = tracking,
   clientApp,
   i18n,
   location,
   userAgentInfo,
 }: InternalProps): null | React.Node => {
-  const [showOverlay, setShowOverlay] = useState(true); // State to track overlay visibility
+  const [showAdContent, setShowAdContent] = useState(true); // State to track ad content visibility
 
   const onButtonClick = () => {
     _tracking.sendEvent({
@@ -71,7 +70,11 @@ export const GetFirefoxBannerBase = ({
     });
   };
 
-  if (isFirefox({ userAgentInfo })) {
+  const dismissAdContent = () => {
+    setShowAdContent(false); // Hide ad content when close button is clicked
+  };
+
+  if (isFirefox({ userAgentInfo }) || !showAdContent) {
     return null;
   }
 
@@ -127,64 +130,52 @@ export const GetFirefoxBannerBase = ({
     replacements,
   });
 
-  const dismissAdContent = () => {
-    // code to dismiss or hide the HTML content
-    const htmlContent = document.querySelector('.ad');
-    if (htmlContent) {
-      htmlContent.style.display = 'none'; // Hide the HTML content
-    }
-    setShowOverlay(false); // Hide overlay when ad content is dismissed
-  };
-
   return (
-    <div>
-      <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`} onClick={dismissAdContent} />
-        <div className="ad">
-          <span className="close-btn" onClick={dismissAdContent}>&times;</span>
-          <div className="popup-content">
-    <div className="image-container">
-      <img src={vpnPhone2} alt="Mozilla VPN" className="product-image"/>
-    </div>
-    <div className="text-container">
-      <div className="product-info">
-        <div className="product-name">
-          <h1>Mozilla VPN <img src={vpn} alt="Mozilla VPN" className="product-imag"/></h1>
-          <br></br>
-          <h2 className="text-gradient-vpn">Powerful privacy for peace of mind</h2>
+    <div className="ad">
+      <span className="close-btn" onClick={dismissAdContent}>&times;</span>
+      <div className="popup-content">
+        <div className="image-container">
+          <img src={focusPhone2} alt="Mozilla Focus" className="product-image" />
         </div>
-        <br></br>
-        <div className="product-description">
-          <h3>Protect your online privacy with Mozilla's amazing VPN. Stay safe and secure while browsing the web.</h3>
-        </div>
-        <div className="product-features">
-          <br></br>
-          <h3>Key Features:</h3>
-          <div className="feature-columns">
-            <div className="feature-column">
-            <li>Secure and private browsing</li>
-                                    <li>Access to geo-restricted content</li>
-                                    <li>Connect up to 5 devices</li>
-                                    <li>More than 500 servers in 30+ countries</li>
-                                    <li> Fast network speeds even while gaming</li>
+        <div className="text-container">
+          <div className="product-info">
+            <div className="product-name">
+              <h1>Mozilla Focus <img src={focus} alt="Mozilla focus" className="product-imag" /></h1>
+              <br></br>
+              <h2 className="text-gradient-focus">Simply private mobile browsing</h2>
             </div>
-            <div className="feature-column">
-            <li>Fast and reliable connections</li>
-                                    <li>Cross-platform support</li>
-                                    <li>No logging, tracking or sharing of network data</li>
-                                    <li>No bandwidth restrictions or throttling</li>
-                                    <li>Extra security: whole device protection, multi-hop routing & more</li>
+            <br></br>
+            <div className="product-description">
+              <h3>Firefox Focus is your dedicated privacy browser with automatic tracking protection. With Focus, your pages load faster and your data stays private.</h3>
             </div>
-          </div>
-          <div className="button-container">
-          <a href="https://www.mozilla.org/en-US/products/vpn/">
-              <button className="buttonColorVPN">Get Mozilla VPN</button>
-            </a>
+            <br></br>
+            <div className="product-features">
+              <h3>Key Features:</h3>
+              <div className="feature-columns">
+                <div className="feature-column">
+                  <ul>
+                    <li>Easily erase your history, passwords and cookies , so unwanted ads don’t follow you around online</li>
+                    <br />
+                    <li>Firefox Focus offers next-level privacy by default and it’s backed by Mozilla</li>
+                  </ul>
+                </div>
+                <div className="feature-column">
+                  <ul>
+                    <li>Firefox Focus blocks a wide range of common trackers by default including social trackers</li>
+                    <br />
+                    <li>Focus removes trackers so the pages you’re viewing require less data and load much faster</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="button-container">
+                <a href="https://www.mozilla.org/en-US/firefox/browsers/mobile/focus/">
+                  <button className="buttonColorFocus">Get Firefox Focus</button>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-        </div>
     </div>
   );
 };
@@ -196,10 +187,10 @@ function mapStateToProps(state: AppState): PropsFromState {
   };
 }
 
-const GetFirefoxBanner: React.ComponentType<Props> = compose(
+const GetFocusAd: React.ComponentType<Props> = compose(
   withRouter,
   connect(mapStateToProps),
   translate(),
-)(GetFirefoxBannerBase);
+)(GetFocusAdBase);
 
-export default GetFirefoxBanner;
+export default GetFocusAd;

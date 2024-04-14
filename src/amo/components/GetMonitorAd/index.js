@@ -55,7 +55,7 @@ type InternalProps = {|
   location: ReactRouterLocationType,
 |};
 
-export const GetFirefoxBannerBase = ({
+export const GetMonitorAdBase = ({
   _tracking = tracking,
   clientApp,
   i18n,
@@ -206,10 +206,10 @@ function mapStateToProps(state: AppState): PropsFromState {
   };
 }
 
-const GetFirefoxBanner: React.ComponentType<Props> = compose(
+const GetMonitorAd: React.ComponentType<Props> = compose(
   withRouter,
   connect(mapStateToProps),
   translate(),
-)(GetFirefoxBannerBase);
+)(GetMonitorAdBase);
 
-export default GetFirefoxBanner;
+export default GetMonitorAd;
