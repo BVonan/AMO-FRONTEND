@@ -5,6 +5,11 @@
 }
 
 .LandingPage-header {
+  display: grid;
+  grid-template-columns: 1fr auto; /* Divide the header into two columns */
+  grid-gap: 20px; /* Add some space between the columns */
+  align-items: center; /* Align items vertically */
+
   background: rgb(28,0,47);
   background: linear-gradient(90deg, rgba(28,0,47,1) 47%, rgba(130,104,142,0.9626444327731093) 73%);
   border-radius: $border-radius-default;
@@ -59,4 +64,11 @@
   @include respond-to(medium) {
     display: block;
   }
+}
+
+// hero image css
+.heroImages{
+  height: auto;
+  width: 400px;
+
 }
