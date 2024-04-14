@@ -148,11 +148,14 @@ export const GetFirefoxBannerBase = ({
               <div className="product-info">
                 <div className="product-name">
                   <h1>Mozilla Focus <img src={focus} alt="Mozilla focus" className="product-imag" /></h1>
+                  <br></br>
                   <h2 className="text-gradient-focus">Simply private mobile browsing</h2>
                 </div>
+                <br></br>
                 <div className="product-description">
                   <h3>Firefox Focus is your dedicated privacy browser with automatic tracking protection. With Focus, your pages load faster and your data stays private.</h3>
                 </div>
+                <br></br>
                 <div className="product-features">
                   <h3>Key Features:</h3>
                   <div className="feature-columns">

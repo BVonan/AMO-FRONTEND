@@ -58,7 +58,7 @@ for a secure internet connection with a new perspective.`;
   return (
     
       <div>
-       <div id="mozilla-VPN" className="popup" style={{ display: currentIndex === 3 ? 'block' : 'none' }}
+       <div id="mozilla-VPN" className="popup" style={{ display: currentIndex === 0 ? 'block' : 'none' }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}>
         <div className="popup-content1">
@@ -145,12 +145,10 @@ for a secure internet connection with a new perspective.`;
           </div>
         </div>
       </div>
-
-     
       <div
         id="mozilla-relay"
         className="popup"
-        style={{ display: currentIndex === 0 ? 'block' : 'none' }}
+        style={{ display: currentIndex === 3 ? 'block' : 'none' }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

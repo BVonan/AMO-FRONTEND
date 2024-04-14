@@ -159,10 +159,12 @@ export const GetFirefoxBannerBase = ({
                     className="product-imag"
                   />
                 </h1>
+                <br></br>
                 <h2 className="text-gradient-focus">
                   Powerful privacy for peace of mind
                 </h2>
                 </div>
+                <br></br>
                 <div className="product-features">
           <h3>Key Features:</h3>
           <div className="feature-columns">
