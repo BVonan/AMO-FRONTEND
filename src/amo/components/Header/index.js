@@ -41,6 +41,7 @@ const Ads = [
   import('../PocketAd/index'),
   import('../RelayAd/index'),
   import('../VPNAd/index'),
+  import('../PopupRotatingAds/index'),
 ];
 export class HeaderBase extends React.Component {
   // for banner ad
