@@ -1,5 +1,6 @@
 /* @flow */
-import * as React from 'react';
+import React, { useState } from 'react';
+
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
@@ -26,7 +27,6 @@ import type { I18nType } from 'amo/types/i18n';
 import type { ReactRouterLocationType } from 'amo/types/router';
 import pocketPhone from './img/pocketPhone.png';
 import pocket from './img/pocket.png';
-
 
 
 import './styles.scss';
@@ -63,17 +63,12 @@ export const GetFirefoxBannerBase = ({
   location,
   userAgentInfo,
 }: InternalProps): null | React.Node => {
+  const [showOverlay, setShowOverlay] = useState(true); // State to track overlay visibility
+
   const onButtonClick = () => {
     _tracking.sendEvent({
       action: GET_FIREFOX_BANNER_CLICK_ACTION,
       category: GET_FIREFOX_BUTTON_CLICK_CATEGORY,
-    });
-  };
-
-  const onDismiss = () => {
-    _tracking.sendEvent({
-      action: GET_FIREFOX_BANNER_DISMISS_ACTION,
-      category: GET_FIREFOX_BANNER_DISMISS_CATEGORY,
     });
   };
 
@@ -139,63 +134,56 @@ export const GetFirefoxBannerBase = ({
     if (htmlContent) {
       htmlContent.style.display = 'none'; // Hide the HTML content
     }
+    setShowOverlay(false); // Hide overlay when ad content is dismissed
   };
-  
-  return (
-    <Notice
-      className="GetFirefoxBanner"
-      dismissible
-      id="GetFirefoxBanner-notice"
-      onDismiss={onDismiss}
-      type="warning"
-    >
-      <span className="GetFirefoxBanner-content">{bannerContent}</span>
-      {/* Insert HTML content here */}
-      <div className="ad">
-      <span className="close-btn" onClick={dismissAdContent}>&times;</span>
-  <div className="popup-content">
-    <div className="image-container">
-      <img src={pocketPhone} alt="Mozilla monitor" className="product-image" />
-    </div>
-    <div className="text-container">
-      <div className="product-info">
-        <div className="product-name">
-          <h1>Firefox Pocket <img src={pocket} alt="Firefox Pocket" className="product-imag" /></h1>
-          <h2 className="text-gradient-pocket">An Award-Winning App From Firefox</h2>
-        </div>
-        <div className="product-description">
-          <h3>Turn your downtime into quality time. Pocket is the place to save, read and get fueled by the best content on the web.</h3>
-        </div>
-        <div className="product-features">
-          <h3>Key Features:</h3>
-          <div className="feature-columns">
-            <div className="feature-column">
-              <ul>
-              <li> Pocket strips away clutter and saves the page</li>
-              <li>Organize saved content with tags and folders</li>
-              <li>Seamless integration across devices</li>
-              </ul>
-            </div>
-            <div className="feature-column">
-              <ul>
-              <li>Discover new content based on interests:</li>
-              <li>hare saved content with friends and followers</li>
-              <li>Customizable reading experience</li>
-              </ul>
-            </div>
-          </div>
-          <div className="button-container">
-            <a href="https://www.mozilla.org/en-US/firefox/pocket/">
-              <button className="buttonColorPocket">Get Firefox pocket</button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-    </Notice>
+  return (
+    <div>
+      <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`} onClick={dismissAdContent} />
+        <div className="ad">
+          <span className="close-btn" onClick={dismissAdContent}>&times;</span>
+          <div className="popup-content">
+            <div className="image-container">
+              <img src={pocketPhone} alt="Mozilla Focus" className="product-image" />
+            </div>
+            <div className="text-container">
+              <div className="product-info">
+              <div className="product-name">
+                <h1>Firefox Pocket <img src={pocket} alt="Firefox Pocket" className="product-imag" /></h1>
+                <h2 className="text-gradient-pocket">An Award-Winning App From Firefox</h2>
+              </div>
+              <div className="product-description">
+                <h3>Turn your downtime into quality time. Pocket is the place to save, read and get fueled by the best content on the web.</h3>
+              </div>
+              <div className="product-features">
+                <h3>Key Features:</h3>
+                <div className="feature-columns">
+                  <div className="feature-column">
+                    <ul>
+                    <li> Pocket strips away clutter and saves the page</li>
+                    <li>Organize saved content with tags and folders</li>
+                    <li>Seamless integration across devices</li>
+                    </ul>
+                  </div>
+                  <div className="feature-column">
+                    <ul>
+                    <li>Discover new content based on interests:</li>
+                    <li>hare saved content with friends and followers</li>
+                    <li>Customizable reading experience</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="button-container">
+                  <a href="https://www.mozilla.org/en-US/firefox/pocket/">
+                    <button className="buttonColorPocket">Get Firefox pocket</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </div>
   );
 };
 

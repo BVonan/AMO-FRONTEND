@@ -1,5 +1,6 @@
 /* @flow */
-import * as React from 'react';
+import React, { useState } from 'react';
+
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
@@ -26,8 +27,6 @@ import type { I18nType } from 'amo/types/i18n';
 import type { ReactRouterLocationType } from 'amo/types/router';
 import relayPhone from './img/relayPhone.png';
 import relay from './img/relay.png';
-
-
 
 import './styles.scss';
 
@@ -63,17 +62,12 @@ export const GetFirefoxBannerBase = ({
   location,
   userAgentInfo,
 }: InternalProps): null | React.Node => {
+  const [showOverlay, setShowOverlay] = useState(true); // State to track overlay visibility
+
   const onButtonClick = () => {
     _tracking.sendEvent({
       action: GET_FIREFOX_BANNER_CLICK_ACTION,
       category: GET_FIREFOX_BUTTON_CLICK_CATEGORY,
-    });
-  };
-
-  const onDismiss = () => {
-    _tracking.sendEvent({
-      action: GET_FIREFOX_BANNER_DISMISS_ACTION,
-      category: GET_FIREFOX_BANNER_DISMISS_CATEGORY,
     });
   };
 
@@ -133,33 +127,26 @@ export const GetFirefoxBannerBase = ({
     replacements,
   });
 
-  
   const dismissAdContent = () => {
     // code to dismiss or hide the HTML content
     const htmlContent = document.querySelector('.ad');
     if (htmlContent) {
       htmlContent.style.display = 'none'; // Hide the HTML content
     }
+    setShowOverlay(false); // Hide overlay when ad content is dismissed
   };
-  
+
   return (
-    <Notice
-      className="GetFirefoxBanner"
-      dismissible
-      id="GetFirefoxBanner-notice"
-      onDismiss={onDismiss}
-      type="warning"
-    >
-      <span className="GetFirefoxBanner-content">{bannerContent}</span>
-      {/* Insert HTML content here */}
-      <div className="ad">
-      <span className="close-btn" onClick={dismissAdContent}>&times;</span>
-  <div className="popup-content">
-    <div className="image-container">
-      <img src={relayPhone} alt="Mozilla Relay" className="product-image" />
-    </div>
-    <div className="text-container">
-      <div className="product-info">
+    <div>
+      <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`} onClick={dismissAdContent} />
+        <div className="ad">
+          <span className="close-btn" onClick={dismissAdContent}>&times;</span>
+          <div className="popup-content">
+            <div className="image-container">
+              <img src={relayPhone} alt="Mozilla Focus" className="product-image" />
+            </div>
+            <div className="text-container">
+            <div className="product-info">
         <div className="product-name">
           <h1>Firefox Relay <img src={relay} alt="Firefox Pocket" className="product-imag" /></h1>
           <h2 className="text-gradient-relay">Protect your identity with secure phone and email masking</h2>
@@ -192,11 +179,10 @@ export const GetFirefoxBannerBase = ({
           </div>
         </div>
       </div>
+            </div>
+          </div>
+        </div>
     </div>
-  </div>
-</div>
-
-    </Notice>
   );
 };
 

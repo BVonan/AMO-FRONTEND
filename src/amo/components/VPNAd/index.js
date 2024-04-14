@@ -1,5 +1,6 @@
 /* @flow */
-import * as React from 'react';
+import React, { useState } from 'react';
+
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
@@ -26,8 +27,6 @@ import type { I18nType } from 'amo/types/i18n';
 import type { ReactRouterLocationType } from 'amo/types/router';
 import vpnPhone2 from './img/vpnPhone2.png';
 import vpn from './img/vpn.png';
-
-
 
 import './styles.scss';
 
@@ -63,17 +62,12 @@ export const GetFirefoxBannerBase = ({
   location,
   userAgentInfo,
 }: InternalProps): null | React.Node => {
+  const [showOverlay, setShowOverlay] = useState(true); // State to track overlay visibility
+
   const onButtonClick = () => {
     _tracking.sendEvent({
       action: GET_FIREFOX_BANNER_CLICK_ACTION,
       category: GET_FIREFOX_BUTTON_CLICK_CATEGORY,
-    });
-  };
-
-  const onDismiss = () => {
-    _tracking.sendEvent({
-      action: GET_FIREFOX_BANNER_DISMISS_ACTION,
-      category: GET_FIREFOX_BANNER_DISMISS_CATEGORY,
     });
   };
 
@@ -139,21 +133,15 @@ export const GetFirefoxBannerBase = ({
     if (htmlContent) {
       htmlContent.style.display = 'none'; // Hide the HTML content
     }
+    setShowOverlay(false); // Hide overlay when ad content is dismissed
   };
-  
+
   return (
-    <Notice
-      className="GetFirefoxBanner"
-      dismissible
-      id="GetFirefoxBanner-notice"
-      onDismiss={onDismiss}
-      type="warning"
-    >
-      <span className="GetFirefoxBanner-content">{bannerContent}</span>
-      {/* Insert HTML content here */}
-      <div className="ad">
-      <span className="close-btn" onClick={dismissAdContent}>&times;</span>
-  <div className="popup-content">
+    <div>
+      <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`} onClick={dismissAdContent} />
+        <div className="ad">
+          <span className="close-btn" onClick={dismissAdContent}>&times;</span>
+          <div className="popup-content">
     <div className="image-container">
       <img src={vpnPhone2} alt="Mozilla VPN" className="product-image"/>
     </div>
@@ -193,9 +181,8 @@ export const GetFirefoxBannerBase = ({
       </div>
     </div>
   </div>
-</div>
-
-    </Notice>
+        </div>
+    </div>
   );
 };
 
