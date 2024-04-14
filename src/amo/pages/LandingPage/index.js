@@ -13,6 +13,8 @@ import Categories from 'amo/components/Categories';
 import HeadLinks from 'amo/components/HeadLinks';
 import HeadMetaTags from 'amo/components/HeadMetaTags';
 import Page from 'amo/components/Page';
+import heroImage from './img/hero-image.png';
+
 import {
   ADDON_TYPE_EXTENSION,
   ADDON_TYPE_STATIC_THEME,
@@ -235,6 +237,7 @@ export class LandingPageBase extends React.Component {
         to customize Firefox and make the browser all your own.`),
     };
 
+
     const isAddonTheme = ADDON_TYPE_STATIC_THEME === addonType;
     const title = headingText[addonType];
 
@@ -259,9 +262,11 @@ export class LandingPageBase extends React.Component {
             <h1 className="LandingPage-addonType-name">
               {headingText[addonType]}
             </h1>
-            <p className="LandingPage-heading-content">
+            
+            <div className="LandingPage-heading-content">
               {contentText[addonType]}
-            </p>
+            </div>
+            <img className='heroImages' src = {heroImage} alt="hero Image"/>
           </div>
 
           <Categories addonType={addonType} />

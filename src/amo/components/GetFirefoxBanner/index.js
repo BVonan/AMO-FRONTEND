@@ -136,7 +136,7 @@ export const GetFirefoxBannerBase = ({
  
   return (
     <div>
-    <PopupManager/>
+    
     <Notice
       className="GetFirefoxBanner"
       dismissible

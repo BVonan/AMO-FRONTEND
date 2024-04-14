@@ -1,6 +1,7 @@
 @import '~amo/css/styles';
 
 .Categories .Card-contents {
+  width: 100%;
   @include respond-to(large) {
     padding-bottom: 12px;
   }
@@ -13,7 +14,7 @@
 .Categories-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content:center;
   list-style: none;
   margin: 0 auto;
   padding: 0;
@@ -38,7 +39,7 @@
 .Categories-link:visited,
 .Categories-link:hover,
 .Categories-link:active {
-  border-radius: 5px;
+  border-radius: 20px;
   color: #fff;
   display: inline-block;
   font-size: $font-size-s;
@@ -52,11 +53,11 @@
 
 @for $i from 1 through 12 {
   .Categories--category-color-#{$i} {
-    background: nth($category-colors, $i);
-
+    background: #3443fc;
+    
     &:focus,
     &:hover {
-      background: darken(nth($category-colors, $i), 20);
+      background: #8088fc;
     }
   }
 }
