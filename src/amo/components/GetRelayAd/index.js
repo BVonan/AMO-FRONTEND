@@ -138,53 +138,81 @@ export const GetRelayAdBase = ({
 
   return (
     <div>
-      <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`} onClick={dismissAdContent} />
-        <div className="ad">
-          <span className="close-btn" onClick={dismissAdContent}>&times;</span>
-          <div className="popup-content">
-            <div className="image-container">
-              <img src={relayPhone} alt="Mozilla Focus" className="product-image" />
-            </div>
-            <div className="text-container">
-            <div className="product-info">
-        <div className="product-name">
-          <h1>Firefox Relay <img src={relay} alt="Firefox Pocket" className="product-imag" /></h1>
-          <br></br>
-          <h2 className="text-gradient-relay">Protect your identity with secure phone and email masking</h2>
-        </div>
-        <br></br>
-        <div className="product-description">
-          <h3>Our secure, easy-to-use email and phone masks help keep your identity private!</h3>
-        </div>
-        <br></br>
-        <div className="product-features">
-          <h3>Key Features:</h3>
-          <div className="feature-columns">
-            <div className="feature-column">
-              <ul>
-              <li>Use Relay email masks and phone masks everywhere</li>
-                                    <br />
-                                    <li>Manage your masks from your Relay dashboard</li>   
-              </ul>
-            </div>
-            <div className="feature-column">
-              <ul>
-              <li>We’ll forward emails, phone calls, and texts to you</li>
-                                    <br />
-                                    <li>Relay protects your identity and your inbox with unique email masks</li>
-              </ul>
-            </div>
+      <div
+        className={`overlay ${showOverlay ? 'show-overlay' : ''}`}
+        onClick={dismissAdContent}
+      />
+      <div className="ad">
+        <span className="close-btn" onClick={dismissAdContent}>
+          &times;
+        </span>
+        <div className="popup-content">
+          <div className="image-container">
+            <img
+              src={relayPhone}
+              alt="Mozilla Focus"
+              className="product-image"
+            />
           </div>
-          <div className="button-container">
-          <a href="https://relay.firefox.com">
-              <button className="buttonColorRelay">Get Firefox Relay </button>
-            </a>
+          <div className="text-container">
+            <div className="product-info">
+              <div className="product-name">
+                <h1>
+                  Firefox Relay{' '}
+                  <img
+                    src={relay}
+                    alt="Firefox Pocket"
+                    className="product-imag"
+                  />
+                </h1>
+                <br></br>
+                <h2 className="text-gradient-relay">
+                  Protect your identity with secure phone and email masking
+                </h2>
+              </div>
+              <br></br>
+              <div className="product-description">
+                <h3>
+                  Our secure, easy-to-use email and phone masks help keep your
+                  identity private!
+                </h3>
+              </div>
+              <br></br>
+              <div className="product-features">
+                <h3>Key Features:</h3>
+                <div className="feature-columns">
+                  <div className="feature-column">
+                    <ul>
+                      <li>Use Relay email masks and phone masks everywhere</li>
+                      <br />
+                      <li>Manage your masks from your Relay dashboard</li>
+                    </ul>
+                  </div>
+                  <div className="feature-column">
+                    <ul>
+                      <li>
+                        We’ll forward emails, phone calls, and texts to you
+                      </li>
+                      <br />
+                      <li>
+                        Relay protects your identity and your inbox with unique
+                        email masks
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="button-container">
+                  <a href="https://relay.firefox.com">
+                    <button className="buttonColorRelay">
+                      Get Firefox Relay{' '}
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-            </div>
-          </div>
-        </div>
     </div>
   );
 };

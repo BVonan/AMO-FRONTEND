@@ -72,7 +72,7 @@ export const GetFocusAdBase = ({
 
   const dismissAdContent = () => {
     setShowAdContent(false); // Hide ad content when close button is clicked
-  };
+  };  
 
   if (isFirefox({ userAgentInfo }) || !showAdContent) {
     return null;
@@ -130,9 +130,12 @@ export const GetFocusAdBase = ({
     replacements,
   });
 
+  const downloadButton = screen.getByRole('button', { name: /Get Firefox Focus/ });
+
+
   return (
     <div className="ad">
-      <span className="close-btn" onClick={dismissAdContent}>&times;</span>
+      <span className="close-btn" onClick={dismissAdContent} data-testid="close-btn">&times;</span>
       <div className="popup-content">
         <div className="image-container">
           <img src={focusPhone2} alt="Mozilla Focus" className="product-image" />
