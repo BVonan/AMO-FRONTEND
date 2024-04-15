@@ -47,6 +47,7 @@
 
 .LandingPage-heading-content {
   @include font-regular;
+  font-family: Inter, sans-serif;
   color:white;
 
   font-size: $font-size-s;
@@ -70,5 +71,23 @@
 .heroImages{
   height: auto;
   width: 400px;
+}
 
+// extension button css
+.extensionButton{
+  height:50px;
+  width: 200px;
+  font-size: large;
+  font-weight:bolder;
+  font-family: Inter, sans-serif;
+  color:white;
+  border-radius: 30px;
+  background: rgb(178,70,252);
+  background: linear-gradient(90deg, rgba(178,70,252,1) 45%, rgba(78,136,255,1) 80%);
+
+
+  &:focus,
+  &:hover {
+    background: #8088fc;
+  }
 }

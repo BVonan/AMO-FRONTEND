@@ -264,6 +264,16 @@ export class LandingPageBase extends React.Component {
     <p className="LandingPage-heading-content">
       {contentText[addonType]}
     </p>
+    <br></br>
+    <br></br>
+    <br></br>
+    <p className="LandingPage-heading-content">
+      In Order to use these add-ons, you'll need to
+    </p>
+    <br></br>
+    <Button className ="extensionButton">
+       Download Firefox
+    </Button>
   </div>
   <img className='heroImages' src={heroImage} alt="hero Image"/>
 </div>
