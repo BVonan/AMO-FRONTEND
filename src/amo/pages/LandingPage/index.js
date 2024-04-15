@@ -179,6 +179,7 @@ export class LandingPageBase extends React.Component {
           },
         },
         highlyRatedFooterText: i18n.gettext('See more top rated themes'),
+        additionalText: i18n.gettext('TESTING RAHIQ'),
       },
     };
 

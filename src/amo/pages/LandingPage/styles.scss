@@ -5,22 +5,73 @@
 }
 
 .LandingPage-header {
-  background-color: $white;
+  background-image: linear-gradient(to right, #020313, #a686c0);
   border-radius: $border-radius-default;
-  margin-bottom: 12px;
-  padding: 24px;
+  color: #fff;
+  margin-bottom: 24px;
+  padding: 80px 24px;
+  text-align: left; // Align the content to the left
 
   @include respond-to(medium) {
-    padding: 48px 36px;
+    padding: 100px 36px;
   }
 
   @include respond-to(large) {
+    margin-bottom: 48px;
+    padding: 120px 48px;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #fff; // Set the text color of the h1 element to white
+
+    @include respond-to(medium) {
+      font-size: 48px;
+    }
+
+    @include respond-to(large) {
+      font-size: 56px;
+    }
+  }
+
+  p {
+    font-size: 10px;
     margin-bottom: 24px;
+    color: #fff; // Set the text color of the paragraph to white
+
+    @include respond-to(medium) {
+      font-size: 20px;
+    }
+
+    @include respond-to(large) {
+      font-size: 22px;
+    }
+  }
+
+  .btn {
+    background-color: #8b00ff;
+    border-color: #8b00ff;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 24px;
+
+    @include respond-to(medium) {
+      font-size: 18px;
+      padding: 16px 32px;
+    }
+
+    @include respond-to(large) {
+      font-size: 20px;
+      padding: 20px 40px;
+    }
   }
 }
 
 .LandingPage-button {
   width: 100%;
+  text-align: left; // Align the button to the left
 
   @include respond-to(medium) {
     display: none;
@@ -29,7 +80,6 @@
 
 .LandingPage-addonType-name {
   @include font-bold;
-
   font-size: $font-size-heading-s;
   margin: 0 0 6px;
 
@@ -41,7 +91,6 @@
 
 .LandingPage-heading-content {
   @include font-regular;
-
   font-size: $font-size-s;
   margin: 0;
   max-width: 600px;
