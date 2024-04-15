@@ -257,26 +257,25 @@ export class LandingPageBase extends React.Component {
           {errorHandler.renderErrorIfPresent()}
 
           <div className="LandingPage-header">
-  <div>
+  <div className="header-content">
     <h1 className="LandingPage-addonType-name">
       {headingText[addonType]}
     </h1>
     <p className="LandingPage-heading-content">
       {contentText[addonType]}
     </p>
-    <br></br>
-    <br></br>
-    <br></br>
+    <br />
     <p className="LandingPage-heading-content">
       In Order to use these add-ons, you'll need to
     </p>
-    <br></br>
-    <Button className ="extensionButton">
-       Download Firefox
-    </Button>
+    <br />
+    <button className="extensionButton">
+      Download Firefox
+    </button>
   </div>
-  <img className='heroImages' src={heroImage} alt="hero Image"/>
+  <img className="heroImages" src={heroImage} alt="hero Image"/>
 </div>
+
 
           <Categories addonType={addonType} />
 
