@@ -5,11 +5,12 @@
 }
 
 .LandingPage-header {
-  display: grid;
-  grid-template-columns: 1fr auto; /* Divide the header into two columns */
-  grid-gap: 20px; /* Add some space between the columns */
+  display: flex; /* Use flexbox */
   align-items: center; /* Align items vertically */
+<<<<<<< HEAD
   background: rgb(28,0,47);
+=======
+>>>>>>> b4689559297f5abd86cc5c93c0db445493d0e4ee
   background: linear-gradient(90deg, rgba(28,0,47,1) 47%, rgba(130,104,142,0.9626444327731093) 73%);
   border-radius: $border-radius-default;
   margin-bottom: 12px;
@@ -67,23 +68,25 @@
 }
 
 // hero image css
-.heroImages{
-  height: auto;
+.header-content {
+  flex: 1; /* Take remaining space */
+}
+
+.heroImages {
+  height: 300px;
   width: 400px;
 }
 
 // extension button css
-.extensionButton{
-  height:50px;
+.extensionButton {
+  height: 50px;
   width: 200px;
   font-size: large;
-  font-weight:bolder;
+  font-weight: bolder;
   font-family: Inter, sans-serif;
-  color:white;
+  color: white;
   border-radius: 30px;
-  background: rgb(178,70,252);
   background: linear-gradient(90deg, rgba(178,70,252,1) 45%, rgba(78,136,255,1) 80%);
-
 
   &:focus,
   &:hover {
