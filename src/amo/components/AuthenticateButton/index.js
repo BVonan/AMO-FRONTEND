@@ -21,6 +21,8 @@ import type { I18nType } from 'amo/types/i18n';
 import type { DispatchFunc } from 'amo/types/redux';
 import type { ReactRouterLocationType } from 'amo/types/router';
 
+import './styles.scss';
+
 type HandleLogInFunc = (
   location: ReactRouterLocationType,
   options?: {| _window: typeof window |},
@@ -103,19 +105,25 @@ export class AuthenticateButtonBase extends React.Component<InternalProps> {
     // mobile browser. This is the cause of
     // https://github.com/mozilla/addons-frontend/issues/1904
     return (
-      <Button
-        href={`#${siteUser ? 'logout' : 'login'}`}
-        buttonType={buttonType}
-        className={className}
-        disabled={siteIsReadOnly}
-        onClick={this.onClick}
-        title={title}
-        micro
-      >
-        {noIcon ? null : <Icon name="user-dark" />}
-        {buttonText}
-      </Button>
+      <>
+        <a href="https://www.firefox.com">
+          <Button className="downloadBtn">Download Firefox </Button>
+        </a>
+        <Button
+          href={`#${siteUser ? 'logout' : 'login'}`}
+          buttonType={buttonType}
+          className={className}
+          disabled={siteIsReadOnly}
+          onClick={this.onClick}
+          title={title}
+          micro
+        >
+          {!noIcon ? <Icon name="user-dark" /> : null}
+          {buttonText}
+        </Button>
+      </>
     );
+    
   }
 }
 

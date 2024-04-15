@@ -1,0 +1,15 @@
+.downloadBtn {
+    height: 40px;
+    width: 140px;
+    font-size: small;
+    font-weight: bolder;
+    font-family: Inter, sans-serif;
+    color: white;
+    border-radius: 30px;
+    background: linear-gradient(90deg, rgba(178,70,252,1) 45%, rgba(78,136,255,1) 80%);
+  
+    &:focus,
+    &:hover {
+      background: #8088fc;
+    }
+  }
