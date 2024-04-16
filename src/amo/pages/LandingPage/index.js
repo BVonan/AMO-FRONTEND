@@ -31,8 +31,8 @@ import {
   visibleAddonType as getVisibleAddonType,
 } from 'amo/utils';
 import translate from 'amo/i18n/translate';
-import Button from 'amo/components/Button';
 import heroimage from './hero-image/hero-image.png';
+import heroImageTheme from './hero-image/hero-image-theme.png';
 
 import './styles.scss';
 
@@ -238,6 +238,7 @@ export class LandingPageBase extends React.Component {
 
     const isAddonTheme = ADDON_TYPE_STATIC_THEME === addonType;
     const title = headingText[addonType];
+    const heroImageSrc = isAddonTheme ? heroImageTheme : heroimage;
 
     return (
       <Page>
@@ -278,17 +279,17 @@ export class LandingPageBase extends React.Component {
     </a>
 
   </div>
-  <img className="heroimages" src={heroimage} alt="hero" />
+  {/* <img className="heroimages" src={heroimage} alt="hero" /> */}
+  <img
+            className={makeClassName('heroimages', {
+              'heroimages--theme': isAddonTheme,
+            })}
+            src={heroImageSrc}
+            alt="hero"
+          />
 </div>
 
           <Categories addonType={addonType} />
-          {/* <Button
-            buttonType="light"
-            className="LandingPage-button"
-            to={`/${getVisibleAddonType(addonType)}/categories/`}
-          >
-            {i18n.gettext('Explore all categories')}
-          </Button> */}
 
           {this.renderIfNotEmpty(
             recommendedAddons,
