@@ -32,6 +32,7 @@ import {
 } from 'amo/utils';
 import translate from 'amo/i18n/translate';
 import Button from 'amo/components/Button';
+
 import heroImage from './img/hero-image.png';
 
 import './styles.scss';
