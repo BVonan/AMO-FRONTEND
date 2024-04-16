@@ -15,6 +15,7 @@
   padding: 20px; /* Reduce the vertical padding */
   height: 200px; /* Set a fixed height for the header */
   overflow: hidden; /* Hide any content that exceeds the container height */
+  align-items: center;
 
   @include respond-to(medium) {
     padding: 36px; /* Adjust the padding as needed */
@@ -72,8 +73,7 @@
   background-blend-mode: multiply;
   background-size: cover;
   background-position: center;
-  margin-top: -140px; /* Adjust this value to move the image up */
-  
+  align-items: center;
 }
 
 

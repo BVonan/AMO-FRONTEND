@@ -34,8 +34,6 @@ import translate from 'amo/i18n/translate';
 import Button from 'amo/components/Button';
 import heroimage from './hero-image/hero-image.png';
 
-import heroImage from './img/hero-image.png';
-
 import './styles.scss';
 
 export class LandingPageBase extends React.Component {
