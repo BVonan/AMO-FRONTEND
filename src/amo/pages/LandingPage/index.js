@@ -32,7 +32,7 @@ import {
 } from 'amo/utils';
 import translate from 'amo/i18n/translate';
 import Button from 'amo/components/Button';
-import heroimage from './hero-image/hero-img.png';
+import heroimage from './hero-image/hero-image.png';
 
 import './styles.scss';
 
@@ -275,17 +275,19 @@ export class LandingPageBase extends React.Component {
       
     </button>
     </a>
+
   </div>
   <img className="heroimages" src={heroimage} alt="hero" />
 </div>
+
           <Categories addonType={addonType} />
-          <Button
+          {/* <Button
             buttonType="light"
             className="LandingPage-button"
             to={`/${getVisibleAddonType(addonType)}/categories/`}
           >
             {i18n.gettext('Explore all categories')}
-          </Button>
+          </Button> */}
 
           {this.renderIfNotEmpty(
             recommendedAddons,
