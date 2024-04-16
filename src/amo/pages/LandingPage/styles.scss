@@ -5,73 +5,25 @@
 }
 
 .LandingPage-header {
-  background-image: linear-gradient(to right, #020313, #a686c0);
+  display: flex; /* Use flexbox */
+  align-items: center; /* Align items vertically */
+  background: rgb(28,0,47);
+  background: linear-gradient(90deg, rgba(28,0,47,1) 40%, rgba(130,104,142,0.9626444327731093) 70%);
   border-radius: $border-radius-default;
-  color: #fff;
-  margin-bottom: 24px;
-  padding: 80px 24px;
-  text-align: left; // Align the content to the left
+  margin-bottom: 12px;
+  padding: 24px;
 
   @include respond-to(medium) {
-    padding: 100px 36px;
+    padding: 48px 36px;
   }
 
   @include respond-to(large) {
-    margin-bottom: 48px;
-    padding: 120px 48px;
-  }
-
-  h1 {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 16px;
-    color: #fff; // Set the text color of the h1 element to white
-
-    @include respond-to(medium) {
-      font-size: 48px;
-    }
-
-    @include respond-to(large) {
-      font-size: 56px;
-    }
-  }
-
-  p {
-    font-size: 10px;
     margin-bottom: 24px;
-    color: #fff; // Set the text color of the paragraph to white
-
-    @include respond-to(medium) {
-      font-size: 20px;
-    }
-
-    @include respond-to(large) {
-      font-size: 22px;
-    }
-  }
-
-  .btn {
-    background-color: #8b00ff;
-    border-color: #8b00ff;
-    color: #fff;
-    font-size: 16px;
-    padding: 12px 24px;
-
-    @include respond-to(medium) {
-      font-size: 18px;
-      padding: 16px 32px;
-    }
-
-    @include respond-to(large) {
-      font-size: 20px;
-      padding: 20px 40px;
-    }
   }
 }
 
 .LandingPage-button {
   width: 100%;
-  text-align: left; // Align the button to the left
 
   @include respond-to(medium) {
     display: none;
@@ -80,6 +32,7 @@
 
 .LandingPage-addonType-name {
   @include font-bold;
+  color:white;
   font-size: $font-size-heading-s;
   margin: 0 0 6px;
 
@@ -91,6 +44,9 @@
 
 .LandingPage-heading-content {
   @include font-regular;
+  font-family: Inter, sans-serif;
+  color:white;
+  font-weight: bolder;
   font-size: $font-size-s;
   margin: 0;
   max-width: 600px;
@@ -105,5 +61,36 @@
 
   @include respond-to(medium) {
     display: block;
+  }
+}
+
+
+.header-content {
+  flex: 2;
+}
+
+.heroimages {
+  height: 400px;
+  width: 600px;
+  border-radius: 30px;
+  // background: linear-gradient rgba(130,104,142,0.9626444327731093);
+  background-blend-mode:multiply;
+}
+
+
+.downloadbutton {
+  height: 40px;
+  width: 190px;
+  font-size: large;
+  font-style:inherit;
+  font-family: sans-serif;
+  color: white;
+  border-radius: 30px;
+  background: linear-gradient(90deg, rgb(161, 64, 225) 45%, rgb(83, 128, 218) 70%);
+
+  &:active,
+  &:focus,
+  &:hover {
+    background: rgb(56, 87, 149);
   }
 }

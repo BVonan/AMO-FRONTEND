@@ -32,6 +32,7 @@ import {
 } from 'amo/utils';
 import translate from 'amo/i18n/translate';
 import Button from 'amo/components/Button';
+import heroimage from './hero-image/hero-img.png';
 
 import './styles.scss';
 
@@ -179,7 +180,6 @@ export class LandingPageBase extends React.Component {
           },
         },
         highlyRatedFooterText: i18n.gettext('See more top rated themes'),
-        additionalText: i18n.gettext('TESTING RAHIQ'),
       },
     };
 
@@ -257,16 +257,28 @@ export class LandingPageBase extends React.Component {
           {errorHandler.renderErrorIfPresent()}
 
           <div className="LandingPage-header">
-            <h1 className="LandingPage-addonType-name">
-              {headingText[addonType]}
-            </h1>
-            <p className="LandingPage-heading-content">
-              {contentText[addonType]}
-            </p>
-          </div>
-
+  <div className="header-content">
+    <h1 className="LandingPage-addonType-name">
+      {headingText[addonType]}
+    </h1>
+    <p className="LandingPage-heading-content">
+      {contentText[addonType]}
+    </p>
+    <br />
+    <p className="LandingPage-heading-content">
+      In Order to use these add-ons, you'll need to
+    </p>
+    <br/>
+    <a href="https://www.mozilla.org/en-US/firefox/download/thanks/?s=direct&utm_campaign=amo-fx-cta&utm_content=banner-download-button&utm_medium=referral&utm_source=addons.mozilla.org">
+    <button className="downloadbutton">
+      Download Firefox
+      
+    </button>
+    </a>
+  </div>
+  <img className="heroimages" src={heroimage} alt="hero" />
+</div>
           <Categories addonType={addonType} />
-
           <Button
             buttonType="light"
             className="LandingPage-button"

@@ -1,0 +1,17 @@
+.downloadFirefox {
+    height: 30px;
+    width: 150px;
+    font-size: small;
+    font-weight: bolder;
+    font-family: sans-serif;
+    color: white;
+    border-radius: 30px;
+    background: linear-gradient(90deg, rgb(161, 64, 225) 45%, rgb(83, 128, 218) 70%);
+  
+    &:focus,
+
+    
+    &:hover {
+      background: #505486;
+    }
+  }
