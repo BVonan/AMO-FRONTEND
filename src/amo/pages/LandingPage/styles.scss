@@ -5,28 +5,24 @@
 }
 
 .LandingPage-header {
-  display: flex; /* Use flexbox */
-  align-items: center; /* Align items vertically */
-  background: rgb(28,0,47);
-  background: linear-gradient(90deg, rgba(28,0,47,1) 47%, rgba(130,104,142,0.9626444327731093) 73%);
+
+  display: flex;
+  background: rgb(28, 0, 47);
+  background: linear-gradient(90deg, rgba(28, 0, 47, 1) 40%, rgba(130, 104, 142, 0.9626444327731093) 70%);
+
   border-radius: $border-radius-default;
   margin-bottom: 12px;
-  padding: 24px;
+  padding: 20px; /* Reduce the vertical padding */
+  height: 200px; /* Set a fixed height for the header */
+  overflow: hidden; /* Hide any content that exceeds the container height */
 
   @include respond-to(medium) {
-    padding: 48px 36px;
+    padding: 36px; /* Adjust the padding as needed */
+    height: 400px; /* Adjust the height as needed */
   }
 
   @include respond-to(large) {
     margin-bottom: 24px;
-  }
-}
-
-.LandingPage-button {
-  width: 100%;
-
-  @include respond-to(medium) {
-    display: none;
   }
 }
 
@@ -64,30 +60,36 @@
   }
 }
 
-// hero image css
+
 .header-content {
-  flex: 1; /* Take remaining space */
+  flex: 1;
 }
 
-.heroImages {
-  height: 340px;
-  width: 500px;
-  border-radius: 30px;
+.heroimages {
+  height: 600px;
+  width: 700px;
+  border-radius: 1px;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  margin-top: -140px; /* Adjust this value to move the image up */
+  
 }
 
-// extension button css
-.extensionButton {
-  height: 50px;
-  width: 200px;
+
+.downloadbutton {
+  height: 35px;
+  width: 180px;
   font-size: large;
-  font-weight: bolder;
-  font-family: Inter, sans-serif;
+  font-style:inherit;
+  font-family: sans-serif;
   color: white;
   border-radius: 30px;
-  background: linear-gradient(90deg, rgba(178,70,252,1) 45%, rgba(78,136,255,1) 80%);
+  background: linear-gradient(90deg, rgb(161, 64, 225) 45%, rgb(83, 128, 218) 70%);
 
+  &:active,
   &:focus,
   &:hover {
-    background: #8088fc;
+    background: rgb(56, 87, 149);
   }
 }
