@@ -13,6 +13,10 @@ import Categories from 'amo/components/Categories';
 import HeadLinks from 'amo/components/HeadLinks';
 import HeadMetaTags from 'amo/components/HeadMetaTags';
 import Page from 'amo/components/Page';
+//  import MonitorAdComponent from 'amo/components/MonitorAdComponent/MonitorAdComponent';
+// import MonitorAdComponent from 'amo/components/MonitorAdComponent/MonitorAdComponent';
+// import FocusAdComponent from 'amo/components/FocusAdComponent/FocusAdComponent';
+
 import {
   ADDON_TYPE_EXTENSION,
   ADDON_TYPE_STATIC_THEME,
@@ -37,6 +41,7 @@ import heroImageTheme from './hero-image/hero-image-theme.png';
 import './styles.scss';
 
 export class LandingPageBase extends React.Component {
+
   static propTypes = {
     addonTypeOfResults: PropTypes.string,
     // This is a bug; context is used in `setViewContextType()`.
@@ -258,40 +263,40 @@ export class LandingPageBase extends React.Component {
           {errorHandler.renderErrorIfPresent()}
 
           <div className="LandingPage-header">
-  <div className="header-content">
-    <h1 className="LandingPage-addonType-name">
-      {headingText[addonType]}
-    </h1>
-    <p className="LandingPage-heading-content">
-      {contentText[addonType]}
-    </p>
-    <br />
-    <p className="LandingPage-heading-content">
-      In Order to use these add-ons, you'll need to
-    </p>
+        <div className="header-content">
+          <h1 className="LandingPage-addonType-name">
+          {headingText[addonType]}
+                    </h1>
+              <p className="LandingPage-heading-content">
+                {contentText[addonType]}
+            </p>
+            <br />
+            <p className="LandingPage-heading-content">
+              In Order to use these add-ons, you'll need to
+            </p>
 
-    <br/>
-    <a href="https://www.mozilla.org/en-US/firefox/download/thanks/?s=direct&utm_campaign=amo-fx-cta&utm_content=banner-download-button&utm_medium=referral&utm_source=addons.mozilla.org">
-    <button className="downloadbutton">
-      Download Firefox
-      
-    </button>
-    </a>
+            <br/>
+            <a href="https://www.mozilla.org/en-US/firefox/download/thanks/?s=direct&utm_campaign=amo-fx-cta&utm_content=banner-download-button&utm_medium=referral&utm_source=addons.mozilla.org">
+            <button className="downloadbutton">
+              Download Firefox
+              
+            </button>
+            </a>
 
-  </div>
-  {/* <img className="heroimages" src={heroimage} alt="hero" /> */}
-  <img
+            </div>
+            {/* <img className="heroimages" src={heroimage} alt="hero" /> */}
+            <img
             className={makeClassName('heroimages', {
               'heroimages--theme': isAddonTheme,
             })}
             src={heroImageSrc}
             alt="hero"
           />
-</div>
+              </div>
 
-          <Categories addonType={addonType} />
+            <Categories addonType={addonType} />
 
-          {this.renderIfNotEmpty(
+           {this.renderIfNotEmpty(
             recommendedAddons,
             <LandingAddonsCard
               addonInstallSource={INSTALL_SOURCE_FEATURED}
@@ -330,7 +335,7 @@ export class LandingPageBase extends React.Component {
               loading={loading}
             />,
           )}
-        </div>
+        </div>   
       </Page>
     );
   }
