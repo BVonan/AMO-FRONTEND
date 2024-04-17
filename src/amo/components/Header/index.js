@@ -24,13 +24,6 @@ import translate from 'amo/i18n/translate';
 import DropdownMenu from 'amo/components/DropdownMenu';
 import DropdownMenuItem from 'amo/components/DropdownMenuItem';
 
-// import FocusAd from '../FocusAd/index';
-// import FirefoxAd from '../FirefoxAd/index';
-// import MonitorAd from '../MonitorAd/index';
-// import PocketAd from '../PocketAd/index';
-// import RelayAd from '../RelayAd/index';
-// import VPNAd from '../VPNAd/index';
-
 import './styles.scss';
 
 // banner ad imports

@@ -1,6 +1,12 @@
 import * as React from 'react';
+import Header, { HeaderBase } from 'amo/components/Header'; // Import HeaderBase along with Header
+// import Ads from 'amo/components/Header';
+import { Ads } from '../../../../src/amo/components/Header/index'; 
+import { CLIENT_APP_FIREFOX } from 'amo/constants';
 
-import Header from 'amo/components/Header';
+import '../../../setupTests'; 
+import { shallow } from 'enzyme';
+
 import { CLIENT_APP_FIREFOX } from 'amo/constants';
 import {
   dispatchClientMetadata,
@@ -8,6 +14,8 @@ import {
   screen,
   userAgents,
 } from 'tests/unit/helpers';
+
+// Import Ads constant from the source file where it is defined
 
 describe(__filename, () => {
   const render = (props = {}) => {
@@ -44,4 +52,56 @@ describe(__filename, () => {
       screen.queryByRole('link', { name: 'download Firefox' }),
     ).not.toBeInTheDocument();
   });
+});
+
+// Fix the Ads Constant Test
+describe('Ads Constant', () => {
+  // Fix the HeaderBase Reference in this test
+  it('should load a random ad component on mount', async () => {
+    const headerInstance = new HeaderBase({
+      handleLogOut: jest.fn(),
+      api: {},
+      clientApp: CLIENT_APP_FIREFOX,
+      i18n: {},
+      isReviewer: false,
+      loadedPageIsAnonymous: false,
+      siteIsReadOnly: false,
+      siteUser: {},
+      userAgentInfo: {},
+    });
+    await headerInstance.componentDidMount();
+
+    expect(headerInstance.state.AdComponent).toBeDefined();
+  });
+});
+
+
+// need to fix
+describe('Header Component', () => {
+  it('should render correctly with default props', () => {
+    const wrapper = shallow(<Header />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly for the blog', () => {
+    const wrapper = shallow(<Header forBlog={true} />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly for an addon install page', () => {
+    const wrapper = shallow(<Header isAddonInstallPage={true} />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly for an anonymous loaded page', () => {
+    const wrapper = shallow(<Header loadedPageIsAnonymous={true} />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly for a Firefox client app', () => {
+    const wrapper = shallow(<Header clientApp={CLIENT_APP_FIREFOX} />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  // Add more specific test cases if needed based on different prop combinations
 });
