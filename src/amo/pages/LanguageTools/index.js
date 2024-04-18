@@ -162,12 +162,12 @@ export class LanguageToolsBase extends React.Component<InternalProps> {
 
           {errorHandler.renderErrorIfPresent()}
 
-          <p>
+          <p className="dictionaryText">
             {i18n.gettext(`Installing a dictionary add-on will add a new language
             option to your spell-checker, which checks your spelling as you
             type in Firefox.`)}
           </p>
-          <p>
+          <p className='dictionaryText2'>
             {i18n.gettext(`Language packs change your browser's interface
             language, including menu options and settings.`)}
           </p>
