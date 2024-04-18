@@ -1,46 +1,46 @@
 @import '~amo/css/styles';
 
-.GetFirefoxBanner {
-  @include respond-to(extraLarge) {
-    border-radius: 0 0 $border-radius-m $border-radius-m;
-    width: 890px;
+// .GetFirefoxBanner {
+//   @include respond-to(extraLarge) {
+//     border-radius: 0 0 $border-radius-m $border-radius-m;
+//     width: 890px;
 
-    .Notice-content {
-      max-width: 590px;
-    }
-  }
+//     .Notice-content {
+//       max-width: 590px;
+//     }
+//   }
 
-  border-radius: 0;
-  box-shadow: 0 1px 7px transparentize($black, 0.5);
-  color: $grey-90;
-  font-size: $font-size-s;
-  left: 50%;
-  padding: 12px 40px;
-  position: fixed;
-  text-align: center;
-  transform: translate(-50%, 0);
-  width: 100%;
-  z-index: 1000;
+//   border-radius: 0;
+//   box-shadow: 0 1px 7px transparentize($black, 0.5);
+//   color: $grey-90;
+//   font-size: $font-size-s;
+//   left: 50%;
+//   padding: 12px 40px;
+//   position: fixed;
+//   text-align: center;
+//   transform: translate(-50%, 0);
+//   width: 100%;
+//   z-index: 1000;
 
-  &.Notice {
-    align-items: center;
-    display: flex;
-    justify-content: center;
+//   &.Notice {
+//     align-items: center;
+//     display: flex;
+//     justify-content: center;
 
-    .Notice-icon {
-      display: none;
-    }
+//     .Notice-icon {
+//       display: none;
+//     }
 
-    .Notice-column {
-      margin: auto 0;
-    }
+//     .Notice-column {
+//       margin: auto 0;
+//     }
 
-    .Notice-dismisser {
-      position: absolute;
-      right: 12px;
-    }
-  }
-}
+//     .Notice-dismisser {
+//       position: absolute;
+//       right: 12px;
+//     }
+//   }
+// }
 
 .GetFirefoxBanner-button {
   &,
@@ -48,3 +48,131 @@
     color: $link-color;
   }
 }
+
+
+.popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 30px;
+  width: auto;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: 9;
+  animation: popup-show 2s ease-in-out forwards;
+}
+
+@keyframes popup-show {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 30px;
+  max-width: 500px;
+  position: relative;
+  text-align: center;
+}
+
+.closebtn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background-color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.closebtn:hover {
+  color: #f00;
+}
+
+.popup-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.download-button:hover {
+  background-color: #3e8e41;
+}
+
+.popup-content h2 {
+  display: block;
+  text-align: center;
+  position: relative;
+}
+
+.popup-content h5 {
+  display: block;
+  text-align: center;
+  position: relative;
+  font-size: 18px;
+}
+
+.popup-content h5 a {
+  color: blue;
+  text-decoration: none;
+}
+
+.popup-content h5 a:hover {
+  text-decoration: underline;
+}
+
+.popup-content h2::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid red;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -20px;
+}
+
+.extension-container {
+display: flex;
+justify-content: space-between;
+margin-bottom: 10px;
+}
+
+.extension {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+margin: 0 10px; /* Add some spacing between extensions */
+}
+
+.extension img {
+width: 64px; /* Adjust the width as needed */
+height: auto; /* Maintain aspect ratio */
+margin-bottom: 10px; /* Add some spacing between the image and text */
+}
+
+
+/* -------------------------------- */

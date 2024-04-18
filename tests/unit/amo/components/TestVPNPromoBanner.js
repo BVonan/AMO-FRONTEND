@@ -41,7 +41,8 @@ import {
   screen,
 } from 'tests/unit/helpers';
 
-describe(__filename, () => {
+
+describe.only(__filename, () => {
   let history;
   let store;
   const addonId = 123;

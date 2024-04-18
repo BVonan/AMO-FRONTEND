@@ -1,0 +1,148 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7d4;
+  text-align: center;
+}
+
+.ad {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 1000px;
+}
+
+.product-name h1 {
+  font-size: 50px;
+  margin-bottom: -20px; 
+}
+
+.product-name h2 {
+  font-size: 34px;
+  margin-bottom: -5px; 
+}
+
+.product-image {
+  /* width: 100px;  */
+  width: 400px;
+  /* height: auto;  */
+  height: 300px;
+}
+
+.product-imag {
+  width: 100px; 
+  height: auto; 
+}
+
+.text-gradient-vpn {
+  background-image: linear-gradient(to right, #007bff, #6610f2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #999;
+}
+
+
+.popup-content {
+  display: flex;
+  align-items: center;
+}
+
+.image-container {
+  flex: 0 0 auto;
+}
+
+.product-image {
+  max-width: 500px;
+  border-radius: 8px;
+}
+
+.text-container {
+  flex: 1;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.product-info {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-description {
+  margin-bottom: -15px;
+}
+
+.product-features {
+  margin-bottom: 15px;
+}
+
+.feature-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.feature-column {
+  flex: 0 0 48%; 
+}
+
+.product-features h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+
+.product-features ul {
+  list-style-type: none;
+  padding: 0;
+  columns: 2;
+}
+
+.product-features li {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 5px;
+  column-span: all;
+}
+
+.button-container {
+  align-self: flex-end;
+  margin-top: 20px; 
+  text-align: center;
+}
+
+.buttonColorVPN {
+  background-image: linear-gradient(to right, #007bff, #6610f2);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 200px;
+  font-size: 18px;
+  text-align: center;
+  margin-right: 200px;
+}
+
+button:hover {
+  background: #007bff;
+}

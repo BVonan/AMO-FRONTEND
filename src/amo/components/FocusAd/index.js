@@ -1,9 +1,8 @@
-/* @flow */
-import * as React from 'react';
+import React, { useState } from 'react';
+
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
-
 
 import {
   CLIENT_APP_ANDROID,
@@ -25,8 +24,8 @@ import type { UserAgentInfoType } from 'amo/reducers/api';
 import type { AppState } from 'amo/store';
 import type { I18nType } from 'amo/types/i18n';
 import type { ReactRouterLocationType } from 'amo/types/router';
-import PopupManager from 'amo/components/PopupRotatingAds'; 
-
+import focus from './img/focus.png';
+import focusPhone2 from './img/focusPhone2.png';
 
 import './styles.scss';
 
@@ -62,17 +61,12 @@ export const GetFirefoxBannerBase = ({
   location,
   userAgentInfo,
 }: InternalProps): null | React.Node => {
+  const [showOverlay, setShowOverlay] = useState(true); // State to track overlay visibility
+
   const onButtonClick = () => {
     _tracking.sendEvent({
       action: GET_FIREFOX_BANNER_CLICK_ACTION,
       category: GET_FIREFOX_BUTTON_CLICK_CATEGORY,
-    });
-  };
-
-  const onDismiss = () => {
-    _tracking.sendEvent({
-      action: GET_FIREFOX_BANNER_DISMISS_ACTION,
-      category: GET_FIREFOX_BANNER_DISMISS_CATEGORY,
     });
   };
 
@@ -123,33 +117,76 @@ export const GetFirefoxBannerBase = ({
   const bannerContent = replaceStringsWithJSX({
     text:
       clientApp === CLIENT_APP_FIREFOX
-        ? i18n.gettext(`To use these add-ons
-            %(downloadLinkStart)sdownload Firefox%(downloadLinkEnd)s.`)
+        ? i18n.gettext(`To use these add-ons, you'll need to
+            %(downloadLinkStart)s Download Firefox%(downloadLinkEnd)s`)
         : i18n.gettext(`To use Android extensions, you'll need
             %(downloadLinkStart)sFirefox for Android%(downloadLinkEnd)s. To
             explore Firefox for desktop add-ons, please %(linkStart)svisit our
-            desktop site%(linkEnd)s.`),
+            desktop site%(linkEnd)s`),
     replacements,
   });
-  
-   
- 
+
+  const dismissAdContent = () => {
+    // code to dismiss or hide the HTML content
+    const htmlContent = document.querySelector('.ad');
+    if (htmlContent) {
+      htmlContent.style.display = 'none'; // Hide the HTML content
+    }
+    setShowOverlay(false); // Hide overlay when ad content is dismissed
+  };
+
   return (
     <div>
-    <PopupManager/>
-    <Notice
-      className="GetFirefoxBanner"
-      dismissible
-      id="GetFirefoxBanner-notice"
-      onDismiss={onDismiss}
-      type="warning"
-    >
-      <span className="GetFirefoxBanner-content">{bannerContent}</span>
-</Notice>
-</div>
+      <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`} onClick={dismissAdContent} />
+        <div className="ad">
+          <span className="close-btn" onClick={dismissAdContent}>&times;</span>
+          <div className="popup-content">
+            <div className="image-container">
+              <img src={focusPhone2} alt="Mozilla Focus" className="product-image" />
+            </div>
+            <div className="text-container">
+              <div className="product-info">
+                <div className="product-name">
+                  <h1>Mozilla Focus <img src={focus} alt="Mozilla focus" className="product-imag" /></h1>
+                  <br></br>
+                  <h2 className="text-gradient-focus">Simply private mobile browsing</h2>
+                </div>
+                <br></br>
+                <div className="product-description">
+                  <h3>Firefox Focus is your dedicated privacy browser with automatic tracking protection. With Focus, your pages load faster and your data stays private.</h3>
+                </div>
+                <br></br>
+                <div className="product-features">
+                  <h3>Key Features:</h3>
+                  <div className="feature-columns">
+                    <div className="feature-column">
+                      <ul>
+                        <li>Easily erase your history, passwords and cookies , so unwanted ads don’t follow you around online</li>
+                        <br />
+                        <li>Firefox Focus offers next-level privacy by default and it’s backed by Mozilla</li>
+                      </ul>
+                    </div>
+                    <div className="feature-column">
+                      <ul>
+                        <li>Firefox Focus blocks a wide range of common trackers by default including social trackers</li>
+                        <br />
+                        <li>Focus removes trackers so the pages you’re viewing require less data and load much faster</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="button-container">
+                    <a href="https://www.mozilla.org/en-US/firefox/browsers/mobile/focus/">
+                      <button className="buttonColorFocus">Get Firefox Focus</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
   );
 };
-
 
 function mapStateToProps(state: AppState): PropsFromState {
   return {
