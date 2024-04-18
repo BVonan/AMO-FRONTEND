@@ -1,7 +1,7 @@
 import React from 'react';
 import './MonitorAdComponent.css';
-import monitorLogo from '../../assets/images/monitor.png';
-import monitorPhone from '../../assets/images/monitorPhone.webp';
+// import monitorLogo from './images/monitor.png';
+// import monitorPhone from './images/monitorPhone.webp';
 
 const MonitorAdComponent = () => {
   return (

@@ -21,6 +21,7 @@ import type { I18nType } from 'amo/types/i18n';
 import type { DispatchFunc } from 'amo/types/redux';
 import type { ReactRouterLocationType } from 'amo/types/router';
 
+
 import './styles.css';
 
 type HandleLogInFunc = (
