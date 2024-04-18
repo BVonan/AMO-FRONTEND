@@ -58,7 +58,7 @@ export const PageBase = ({
   isAddonInstallPage = false,
   isHomePage = false,
   location,
-  showVPNPromo = false,
+  showVPNPromo = true,
   showWrongPlatformWarning = true,
   variant,
 }: InternalProps): React.Node => {
