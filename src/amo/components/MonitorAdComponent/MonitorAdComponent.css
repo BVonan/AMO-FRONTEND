@@ -1,0 +1,149 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7d4;
+    text-align: center;
+}
+
+.ad {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 1000px;
+}
+
+.product-name1 h1 {
+    font-size: 50px;
+    margin-bottom: -20px; 
+}
+
+.product-name1 h2 {
+    font-size: 34px;
+    margin-bottom: 15px; 
+}
+
+.product-image1 {
+    width: 80px;
+    height: auto;
+    float: right;
+    margin-right: 5px;
+    margin-left: 4px;
+    margin-bottom: 5px; /* Adjusted margin */
+    vertical-align: top;
+}
+
+.product-imag1{
+    width: 280px; 
+    height: auto; 
+}
+
+.text-gradient1 {
+    background-image: linear-gradient(to right, #6610f2, #f22e10);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-top: 15px;
+}
+
+
+.close-btn1 {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #999;
+}
+
+
+.popup-content1 {
+    display: flex;
+    align-items: center;
+}
+
+.image-container1 {
+    flex: 0 0 auto;
+}
+
+.product-image1 {
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.text-container1 {
+    flex: 1;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.product-info1 {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-description1 {
+    margin-bottom: 10px;
+}
+
+.product-features1 {
+    margin-bottom: 15px;
+}
+
+.feature-columns1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.feature-column1 {
+    flex: 0 0 48%; 
+}
+
+.product-features1 h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+
+.product-features1 ul {
+    list-style-type: none;
+    padding: 0;
+    columns: 2;
+}
+
+.product-features1 li {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+    column-span: all;
+}
+
+.button-container1 {
+    align-self: flex-end;
+    margin-top: 20px; 
+    text-align: center;
+    background-image: linear-gradient(to right, #6610f2, #f22e10); /* Gradient background */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px;
+    font-size: 18px;
+    text-align: center;
+    margin-right: 200px;
+}
+
+.button-container1:hover {
+    background: #f22d0a;
+}
