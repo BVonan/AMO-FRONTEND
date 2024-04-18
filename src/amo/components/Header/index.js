@@ -269,6 +269,14 @@ export class HeaderBase extends React.Component {
             </>
           )}
         </div>
+        <div class="add-ons-buttons">
+        <a href="https://addons.mozilla.org/en-US/firefox/search/?promoted=recommended&sort=random&type=extension" target="_blank" rel="noopener noreferrer">
+          <button class="add-ons-button">Recommended</button></a>
+          <a href="https://addons.mozilla.org/en-US/firefox/search/?promoted=recommended&sort=rating&type=extension" target="_blank" rel="noopener noreferrer">
+          <button class="add-ons-button">Top Rated</button></a>
+          <a href="https://addons.mozilla.org/en-US/firefox/search/?promoted=recommended&sort=hotness&type=extension" target="_blank" rel="noopener noreferrer">
+          <button class="add-ons-button">Trending</button></a>
+          </div>
       </header>
     );
   }

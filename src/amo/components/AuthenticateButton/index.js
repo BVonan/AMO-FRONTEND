@@ -21,7 +21,7 @@ import type { I18nType } from 'amo/types/i18n';
 import type { DispatchFunc } from 'amo/types/redux';
 import type { ReactRouterLocationType } from 'amo/types/router';
 
-import './styles.scss';
+import './styles.css';
 
 type HandleLogInFunc = (
   location: ReactRouterLocationType,
@@ -106,8 +106,9 @@ export class AuthenticateButtonBase extends React.Component<InternalProps> {
     // https://github.com/mozilla/addons-frontend/issues/1904
     return (
       <>
-        <a href="https://www.firefox.com">
-          <Button className="downloadBtn">Download Firefox </Button>
+        <a href="https://www.mozilla.org/en-US/firefox/download/thanks/?s=direct&utm_campaign=amo-fx-cta&utm_content=banner-download-button&utm_medium=referral&utm_source=addons.mozilla.org">
+          <Button className="downloadFirefox">Download Firefox
+          </Button>
         </a>
         <Button
           href={`#${siteUser ? 'logout' : 'login'}`}

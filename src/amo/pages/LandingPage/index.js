@@ -32,8 +32,7 @@ import {
 } from 'amo/utils';
 import translate from 'amo/i18n/translate';
 import Button from 'amo/components/Button';
-
-import heroImage from './img/hero-image.png';
+import heroimage from './hero-image/hero-img.png';
 
 import './styles.scss';
 
@@ -269,17 +268,17 @@ export class LandingPageBase extends React.Component {
     <p className="LandingPage-heading-content">
       In Order to use these add-ons, you'll need to
     </p>
-    <br />
-    <button className="extensionButton">
+    <br/>
+    <a href="https://www.mozilla.org/en-US/firefox/download/thanks/?s=direct&utm_campaign=amo-fx-cta&utm_content=banner-download-button&utm_medium=referral&utm_source=addons.mozilla.org">
+    <button className="downloadbutton">
       Download Firefox
+      
     </button>
+    </a>
   </div>
-  <img className="heroImages" src={heroImage} alt="hero Image"/>
+  <img className="heroimages" src={heroimage} alt="hero" />
 </div>
-
-
           <Categories addonType={addonType} />
-
           <Button
             buttonType="light"
             className="LandingPage-button"

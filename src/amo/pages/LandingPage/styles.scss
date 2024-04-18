@@ -8,7 +8,7 @@
   display: flex; /* Use flexbox */
   align-items: center; /* Align items vertically */
   background: rgb(28,0,47);
-  background: linear-gradient(90deg, rgba(28,0,47,1) 47%, rgba(130,104,142,0.9626444327731093) 73%);
+  background: linear-gradient(90deg, rgba(28,0,47,1) 40%, rgba(130,104,142,0.9626444327731093) 70%);
   border-radius: $border-radius-default;
   margin-bottom: 12px;
   padding: 24px;
@@ -64,30 +64,33 @@
   }
 }
 
-// hero image css
+
 .header-content {
-  flex: 1; /* Take remaining space */
+  flex: 2;
 }
 
-.heroImages {
-  height: 340px;
-  width: 500px;
+.heroimages {
+  height: 400px;
+  width: 600px;
   border-radius: 30px;
+  // background: linear-gradient rgba(130,104,142,0.9626444327731093);
+  background-blend-mode:multiply;
 }
 
-// extension button css
-.extensionButton {
-  height: 50px;
-  width: 200px;
+
+.downloadbutton {
+  height: 40px;
+  width: 190px;
   font-size: large;
-  font-weight: bolder;
-  font-family: Inter, sans-serif;
+  font-style:inherit;
+  font-family: sans-serif;
   color: white;
   border-radius: 30px;
-  background: linear-gradient(90deg, rgba(178,70,252,1) 45%, rgba(78,136,255,1) 80%);
+  background: linear-gradient(90deg, rgb(161, 64, 225) 45%, rgb(83, 128, 218) 70%);
 
+  &:active,
   &:focus,
   &:hover {
-    background: #8088fc;
+    background: rgb(56, 87, 149);
   }
 }
