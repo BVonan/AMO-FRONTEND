@@ -21,19 +21,6 @@ $cell-padding: 6px;
   
 }
 
-
-
-// .LanguageTools-header{
-//   font-size: xx-large;
-//   color:black;
-//   height: 28px;
-//   border-top-left-radius: 20px;
-//   border-top-right-radius: 20px;
-//   width: max-content;
-//   height: max-content;
-//   padding: 10px;
-// }
-
 .LanguageTools-table {
   width: 100%;
   border-style: ridge;
@@ -120,15 +107,11 @@ $cell-padding: 6px;
 .Card-header {
   font-size: 45px; 
   color: white; 
-  background: linear-gradient(90deg, rgba(225, 51, 51, 1) 0%, rgba(0, 0, 65, 1) 100%);
+  background:#20123a;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 }
 
-// .Card-contents{
-//   color: white; 
-//   background: linear-gradient(90deg, rgba(225, 51, 51, 1) 0%, rgba(0, 0, 65, 1) 100%); 
-// }
 
 .LanguageTools-in-your-locale-list{
   background: white;
