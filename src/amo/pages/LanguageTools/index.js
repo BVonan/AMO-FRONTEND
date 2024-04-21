@@ -36,9 +36,9 @@ import type { I18nType } from 'amo/types/i18n';
 
 import './styles.scss';
 
-type LanguageToolListProps = {|
-  languageTools: Array<LanguageToolType>,
-|};
+type LanguageToolListProps = {
+    languageTools: Array<LanguageToolType>,
+  };
 
 // Get languages into a list of objects sorted by the english name.
 const sortedLanguages = Object.keys(unfilteredLanguages)
@@ -139,9 +139,9 @@ export class LanguageToolsBase extends React.Component<InternalProps> {
     );
   }
 
+
   render(): React.Node {
     const { languageTools, errorHandler, i18n } = this.props;
-
     const header = i18n.gettext('Dictionaries and Language Packs');
 
     return (
@@ -162,12 +162,12 @@ export class LanguageToolsBase extends React.Component<InternalProps> {
 
           {errorHandler.renderErrorIfPresent()}
 
-          <p>
+          <p className="dictionaryText">
             {i18n.gettext(`Installing a dictionary add-on will add a new language
             option to your spell-checker, which checks your spelling as you
             type in Firefox.`)}
           </p>
-          <p>
+          <p className='dictionaryText2'>
             {i18n.gettext(`Language packs change your browser's interface
             language, including menu options and settings.`)}
           </p>
@@ -177,7 +177,7 @@ export class LanguageToolsBase extends React.Component<InternalProps> {
           <h2 className="LanguageTools-header">
             {i18n.gettext('All Locales')}
           </h2>
-
+          
           <Table className="LanguageTools-table">
             <Thead>
               <Tr className="LanguageTools-header-row">

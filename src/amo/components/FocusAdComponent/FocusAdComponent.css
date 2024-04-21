@@ -1,0 +1,152 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7d4;
+    text-align: center;
+}
+
+.ad {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 1200px;
+}
+
+.product-name2 h1 {
+    font-size: 50px;
+    margin-bottom: 10px; 
+
+}
+
+.product-name2 h2 {
+    font-size: 34px;
+    margin-bottom: 10px; 
+}
+
+.product-image2 {
+    /* width: 100px;  */
+    width: 400px;
+    /* height: auto;  */
+    height: 300px;
+}
+
+.product-imag2 {
+    width: 80px;
+    height: auto;
+    float: right;
+    margin-right: 5px;
+    margin-left: 4px;
+    margin-bottom: 5px; /* Adjusted margin */
+    vertical-align: top;
+}
+
+.text-gradient2 {
+    background-image: linear-gradient(to right, #6610f2, #f22e10);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+.close-btn2 {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #999;
+}
+
+
+.popup-content2 {
+    display: flex;
+    align-items: center;
+}
+
+.image-container2 {
+    flex: 0 0 auto;
+}
+
+.product-image2 {
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.text-container2 {
+    flex: 1;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.product-info2 {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-description2 {
+    margin-bottom: 10px;
+}
+
+.product-features2 {
+    margin-bottom: 15px;
+}
+
+.feature-columns2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.feature-column2 {
+    flex: 0 0 48%; 
+}
+
+.product-features2 h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+
+.product-features2 ul {
+    list-style-type: none;
+    padding: 0;
+    columns: 2;
+}
+
+.product-features2 li {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+    column-span: all;
+}
+
+.button-container2 {
+    align-self: flex-end;
+    margin-top: 20px; 
+    text-align: center;
+    background-image: linear-gradient(to right, #6610f2, #f22e10); /* Gradient background */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px;
+    font-size: 18px;
+    text-align: center;
+    margin-right: 200px;
+}
+
+
+.button-container2:hover2 {
+    background: #f22d0a;
+}

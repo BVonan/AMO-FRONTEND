@@ -38,10 +38,10 @@
 .Categories-link:visited,
 .Categories-link:hover,
 .Categories-link:active {
-  border-radius: 5px;
+  border-radius: 20px;
   color: #fff;
   display: inline-block;
-  font-size: $font-size-s;
+  font-size: meduim;
   font-weight: normal;
   padding: 10px 12px 8px;
   text-decoration: none;
@@ -52,11 +52,16 @@
 
 @for $i from 1 through 12 {
   .Categories--category-color-#{$i} {
-    background: nth($category-colors, $i);
+    background: linear-gradient(to right, #3443fc, #8088fc);
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 13px;
+    color: #fff;
+    transition: 0.3s ease;
 
     &:focus,
     &:hover {
-      background: darken(nth($category-colors, $i), 20);
+      background: #8088fc;
     }
   }
 }

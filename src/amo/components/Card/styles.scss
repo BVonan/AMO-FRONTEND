@@ -6,34 +6,31 @@ $footer-padding: 10px;
   @include addon-section;
   @include font-bold;
   @include text-align-start;
-
   border-top-left-radius: $border-radius-default;
   border-top-right-radius: $border-radius-default;
-  font-size: $font-size-default;
   margin-bottom: 1px;
   margin-top: 0;
+  font-size: x-large;
+  font-family:Inter,'sans-serif'; 
 }
 
 .Card-contents {
   @include addon-section;
-
   font-size: $font-size-s;
   margin: 0;
-
+  background-color: white;
   .Card--no-header & {
     border-top-left-radius: $border-radius-default;
     border-top-right-radius: $border-radius-default;
   }
-
   .Card--no-footer & {
     border-bottom-left-radius: $border-radius-default;
     border-bottom-right-radius: $border-radius-default;
   }
-
   .Card--photon & {
     padding: 20px 15px;
+    background-color: white;
   }
-
   &,
   .Card--photon & {
     @include respond-to(large) {

@@ -5,13 +5,21 @@
 }
 
 .LandingPage-header {
-  background-color: $white;
+
+  display: flex;
+  background: rgb(28, 0, 47);
+  background: linear-gradient(90deg, rgba(28, 0, 47, 1) 40%, rgba(130, 104, 142, 0.9626444327731093) 70%);
+
   border-radius: $border-radius-default;
   margin-bottom: 12px;
-  padding: 24px;
+  padding: 20px; /* Reduce the vertical padding */
+  height: 200px; /* Set a fixed height for the header */
+  overflow: hidden; /* Hide any content that exceeds the container height */
+  align-items: center;
 
   @include respond-to(medium) {
-    padding: 48px 36px;
+    padding: 36px; /* Adjust the padding as needed */
+    height: 400px; /* Adjust the height as needed */
   }
 
   @include respond-to(large) {
@@ -19,17 +27,9 @@
   }
 }
 
-.LandingPage-button {
-  width: 100%;
-
-  @include respond-to(medium) {
-    display: none;
-  }
-}
-
 .LandingPage-addonType-name {
   @include font-bold;
-
+  color:white;
   font-size: $font-size-heading-s;
   margin: 0 0 6px;
 
@@ -41,7 +41,9 @@
 
 .LandingPage-heading-content {
   @include font-regular;
-
+  font-family: Inter, sans-serif;
+  color:white;
+  font-weight: bolder;
   font-size: $font-size-s;
   margin: 0;
   max-width: 600px;
@@ -56,5 +58,48 @@
 
   @include respond-to(medium) {
     display: block;
+  }
+}
+
+
+.header-content {
+  flex: 1;
+}
+
+.heroimages {
+  height: 600px;
+  width: 650px;
+  border-radius: 1px;
+  background-blend-mode: hard-light;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+}
+
+.heroimages--theme {
+  height: 410px;
+  width: 800px;
+  border-radius: 1px;
+  background-blend-mode: hard-light;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+}
+
+
+.downloadbutton {
+  height: 35px;
+  width: 180px;
+  font-size: large;
+  font-style:inherit;
+  font-family: sans-serif;
+  color: white;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #AB42E4 40%, #7167E6 60%);
+
+  &:active,
+  &:focus,
+  &:hover {
+    background: rgb(56, 87, 149);
   }
 }

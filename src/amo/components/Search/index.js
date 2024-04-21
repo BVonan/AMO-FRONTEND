@@ -201,7 +201,7 @@ export class SearchBase extends React.Component<InternalProps> {
           case SEARCH_SORT_TOP_RATED:
             switch (filters.addonType) {
               case ADDON_TYPE_EXTENSION:
-                title = i18n.gettext('Top rated extensions');
+                title = i18n.gettext('RAHIQQQQ');
                 break;
               case ADDON_TYPE_STATIC_THEME:
                 title = i18n.gettext('Top rated themes');

@@ -2,22 +2,24 @@
 
 .AutoSearchInput-search-box {
   position: relative;
+  top: 60px;
 }
 
 .AutoSearchInput-query {
-  @include padding-end(6px);
+  @include padding-end(2px);
   @include padding-start(28px);
 
   // This prevents a flicker of black when focusing on mobile.
   background-color: $white;
   border: 1px solid $white;
-  border-radius: $border-radius-s;
+  border-radius: 20px;
   color: $black;
-  height: 27px;
+  height: 40px;
   outline: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100%;
+  
 
   &:hover {
     border-color: $teal-50;
@@ -82,7 +84,7 @@
   @include start(6px);
 
   position: absolute;
-  top: 6px;
+  top: 9px;
 }
 
 .AutoSearchInput-submit-button {
@@ -94,6 +96,6 @@
 
     display: block;
     position: absolute;
-    top: 6px;
+    top: 9px;
   }
 }
