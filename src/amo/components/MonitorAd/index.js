@@ -1,9 +1,9 @@
 /* @flow */
-import * as React from 'react';
+import React, { useState } from 'react';
+
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
-
 
 import {
   CLIENT_APP_ANDROID,
@@ -25,8 +25,8 @@ import type { UserAgentInfoType } from 'amo/reducers/api';
 import type { AppState } from 'amo/store';
 import type { I18nType } from 'amo/types/i18n';
 import type { ReactRouterLocationType } from 'amo/types/router';
-import PopupManager from 'amo/components/PopupRotatingAds'; 
-
+import monitorPhone from './img/monitorPhone2.png';
+import monitor from './img/monitor.png';
 
 import './styles.scss';
 
@@ -62,17 +62,12 @@ export const GetFirefoxBannerBase = ({
   location,
   userAgentInfo,
 }: InternalProps): null | React.Node => {
+  const [showOverlay, setShowOverlay] = useState(true); // State to track overlay visibility
+
   const onButtonClick = () => {
     _tracking.sendEvent({
       action: GET_FIREFOX_BANNER_CLICK_ACTION,
       category: GET_FIREFOX_BUTTON_CLICK_CATEGORY,
-    });
-  };
-
-  const onDismiss = () => {
-    _tracking.sendEvent({
-      action: GET_FIREFOX_BANNER_DISMISS_ACTION,
-      category: GET_FIREFOX_BANNER_DISMISS_CATEGORY,
     });
   };
 
@@ -128,28 +123,81 @@ export const GetFirefoxBannerBase = ({
         : i18n.gettext(`To use Android extensions, you'll need
             %(downloadLinkStart)sFirefox for Android%(downloadLinkEnd)s. To
             explore Firefox for desktop add-ons, please %(linkStart)svisit our
-            desktop site%(linkEnd)s.`),
+            desktop site%(linkEnd)s`),
     replacements,
   });
-  
-   
- 
+
+  const dismissAdContent = () => {
+    // code to dismiss or hide the HTML content
+    const htmlContent = document.querySelector('.ad');
+    if (htmlContent) {
+      htmlContent.style.display = 'none'; // Hide the HTML content
+    }
+    setShowOverlay(false); // Hide overlay when ad content is dismissed
+  };
+
   return (
     <div>
-    <PopupManager/>
-    <Notice
-      className="GetFirefoxBanner"
-      dismissible
-      id="GetFirefoxBanner-notice"
-      onDismiss={onDismiss}
-      type="warning"
-    >
-      <span className="GetFirefoxBanner-content">{bannerContent}</span>
-</Notice>
-</div>
+      <div
+        className={`overlay ${showOverlay ? 'show-overlay' : ''}`}
+        onClick={dismissAdContent}
+      />
+        <div className="ad">
+          <span className="close-btn" onClick={dismissAdContent}>&times;</span>
+          <div className="popup-content">
+            <div className="image-container">
+              <img src={monitorPhone} alt="Mozilla Focus" className="product-image" />
+            </div>
+            <div className="text-container">
+              <div className="product-info">
+                <div className="product-name">
+                <h1>
+                  Mozilla Monitor{' '}
+                  <img
+                    src={monitor}
+                    alt="Mozilla focus"
+                    className="product-imag"
+                  />
+                </h1>
+                <br></br>
+                <h2 className="text-gradient-focus">
+                  Powerful privacy for peace of mind
+                </h2>
+                </div>
+                <br></br>
+                <div className="product-features">
+          <h3>Key Features:</h3>
+          <div className="feature-columns">
+            <div className="feature-column">
+              <ul>
+              <li>Secure and private browsing</li>
+              <li>Scan 190 data broker sites that may be selling your personal info</li>
+              <li>Remove personal info from sites that are selling it</li>
+              </ul>
+            </div>
+            <div className="feature-column">
+              <ul>
+              <li>Get alerts when your data has been breached</li>
+              <li>Fix high-risk data breaches</li>
+                      <li>Continuous monitoring</li>
+              </ul>
+            </div>
+          </div>
+                <div className="button-container">
+            <a href="https://monitor.mozilla.org">
+                    <button className="buttonColorMonitor">
+                      Get Mozilla Monitor
+                    </button>
+            </a>
+          </div>
+        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
   );
 };
-
 
 function mapStateToProps(state: AppState): PropsFromState {
   return {

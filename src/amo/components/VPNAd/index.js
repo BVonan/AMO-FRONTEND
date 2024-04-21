@@ -1,9 +1,9 @@
 /* @flow */
-import * as React from 'react';
+import React, { useState } from 'react';
+
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
-
 
 import {
   CLIENT_APP_ANDROID,
@@ -25,8 +25,8 @@ import type { UserAgentInfoType } from 'amo/reducers/api';
 import type { AppState } from 'amo/store';
 import type { I18nType } from 'amo/types/i18n';
 import type { ReactRouterLocationType } from 'amo/types/router';
-import PopupManager from 'amo/components/PopupRotatingAds'; 
-
+import vpnPhone2 from './img/vpnPhone2.png';
+import vpn from './img/vpn.png';
 
 import './styles.scss';
 
@@ -62,17 +62,12 @@ export const GetFirefoxBannerBase = ({
   location,
   userAgentInfo,
 }: InternalProps): null | React.Node => {
+  const [showOverlay, setShowOverlay] = useState(true); // State to track overlay visibility
+
   const onButtonClick = () => {
     _tracking.sendEvent({
       action: GET_FIREFOX_BANNER_CLICK_ACTION,
       category: GET_FIREFOX_BUTTON_CLICK_CATEGORY,
-    });
-  };
-
-  const onDismiss = () => {
-    _tracking.sendEvent({
-      action: GET_FIREFOX_BANNER_DISMISS_ACTION,
-      category: GET_FIREFOX_BANNER_DISMISS_CATEGORY,
     });
   };
 
@@ -128,28 +123,71 @@ export const GetFirefoxBannerBase = ({
         : i18n.gettext(`To use Android extensions, you'll need
             %(downloadLinkStart)sFirefox for Android%(downloadLinkEnd)s. To
             explore Firefox for desktop add-ons, please %(linkStart)svisit our
-            desktop site%(linkEnd)s.`),
+            desktop site%(linkEnd)s`),
     replacements,
   });
-  
-   
- 
+
+  const dismissAdContent = () => {
+    // code to dismiss or hide the HTML content
+    const htmlContent = document.querySelector('.ad');
+    if (htmlContent) {
+      htmlContent.style.display = 'none'; // Hide the HTML content
+    }
+    setShowOverlay(false); // Hide overlay when ad content is dismissed
+  };
+
   return (
     <div>
-    <PopupManager/>
-    <Notice
-      className="GetFirefoxBanner"
-      dismissible
-      id="GetFirefoxBanner-notice"
-      onDismiss={onDismiss}
-      type="warning"
-    >
-      <span className="GetFirefoxBanner-content">{bannerContent}</span>
-</Notice>
-</div>
+      <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`} onClick={dismissAdContent} />
+        <div className="ad">
+          <span className="close-btn" onClick={dismissAdContent}>&times;</span>
+          <div className="popup-content">
+    <div className="image-container">
+      <img src={vpnPhone2} alt="Mozilla VPN" className="product-image"/>
+    </div>
+    <div className="text-container">
+      <div className="product-info">
+        <div className="product-name">
+          <h1>Mozilla VPN <img src={vpn} alt="Mozilla VPN" className="product-imag"/></h1>
+          <br></br>
+          <h2 className="text-gradient-vpn">Powerful privacy for peace of mind</h2>
+        </div>
+        <br></br>
+        <div className="product-description">
+          <h3>Protect your online privacy with Mozilla's amazing VPN. Stay safe and secure while browsing the web.</h3>
+        </div>
+        <div className="product-features">
+          <br></br>
+          <h3>Key Features:</h3>
+          <div className="feature-columns">
+            <div className="feature-column">
+            <li>Secure and private browsing</li>
+                                    <li>Access to geo-restricted content</li>
+                                    <li>Connect up to 5 devices</li>
+                                    <li>More than 500 servers in 30+ countries</li>
+                                    <li> Fast network speeds even while gaming</li>
+            </div>
+            <div className="feature-column">
+            <li>Fast and reliable connections</li>
+                                    <li>Cross-platform support</li>
+                                    <li>No logging, tracking or sharing of network data</li>
+                                    <li>No bandwidth restrictions or throttling</li>
+                                    <li>Extra security: whole device protection, multi-hop routing & more</li>
+            </div>
+          </div>
+          <div className="button-container">
+          <a href="https://www.mozilla.org/en-US/products/vpn/">
+              <button className="buttonColorVPN">Get Mozilla VPN</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+        </div>
+    </div>
   );
 };
-
 
 function mapStateToProps(state: AppState): PropsFromState {
   return {

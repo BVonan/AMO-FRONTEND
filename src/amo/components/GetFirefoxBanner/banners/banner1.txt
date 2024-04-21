@@ -1,0 +1,49 @@
+// banner 1
+  .Notice-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    background-image: url("img/Fx-Browser-icon-fullColor.png"); 
+    background-size:contain; 
+    background-repeat:no-repeat;
+    background-position:center;
+    z-index: -1; 
+  }
+
+
+.Notice-dismisser {
+  position: absolute;
+  top: 30%; 
+  right: 30%; 
+  z-index: 1001;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: solid;
+  background-color: orangered;
+}
+.GetFirefoxBanner-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #fff;
+  color: blue; /* Firefox blue */
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.GetFirefoxBanner-button {
+  display: inline-block;
+  padding: 12px 78px;
+  background-color: #fff;
+  color: orangered;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}

@@ -5,7 +5,8 @@ import { compose } from 'redux';
 import config from 'config';
 import makeClassName from 'classnames';
 
-import GetFirefoxBanner from 'amo/components/GetFirefoxBanner';
+// original banner
+// import GetFirefoxBanner from 'amo/components/GetFirefoxBanner';
 import Link from 'amo/components/Link';
 import SearchForm from 'amo/components/SearchForm';
 import SectionLinks from 'amo/components/SectionLinks';
@@ -23,9 +24,34 @@ import translate from 'amo/i18n/translate';
 import DropdownMenu from 'amo/components/DropdownMenu';
 import DropdownMenuItem from 'amo/components/DropdownMenuItem';
 
+// import FocusAd from '../FocusAd/index';
+// import FirefoxAd from '../FirefoxAd/index';
+// import MonitorAd from '../MonitorAd/index';
+// import PocketAd from '../PocketAd/index';
+// import RelayAd from '../RelayAd/index';
+// import VPNAd from '../VPNAd/index';
+
 import './styles.scss';
 
+// banner ad imports
+const Ads = [
+  import('../FocusAd/index'),
+  // import('../FirefoxAd/index'),
+  import('../MonitorAd/index'),
+  import('../PocketAd/index'),
+  import('../RelayAd/index'),
+  import('../VPNAd/index'),
+  import('../PopupRotatingAds/index'),
+];
 export class HeaderBase extends React.Component {
+  // for banner ad
+  constructor(props) {
+    super(props);
+    this.state = {
+      AdComponent: null,
+    };
+  }
+
   static propTypes = {
     _config: PropTypes.object,
     api: PropTypes.object.isRequired,
@@ -48,6 +74,20 @@ export class HeaderBase extends React.Component {
   handleLogOut = (event) => {
     event.preventDefault();
 
+    this.props.handleLogOut({ api: this.props.api });
+  };
+
+  async componentDidMount() {
+    // Select a random banner ad
+    const randomIndex = Math.floor(Math.random() * Ads.length);
+    const Ad = await Ads[randomIndex];
+    this.setState({ AdComponent: Ad.default });
+  }
+
+  // for banner ads
+  // eslint-disable-next-line no-dupe-class-members
+  handleLogOut = (event) => {
+    event.preventDefault();
     this.props.handleLogOut({ api: this.props.api });
   };
 
@@ -228,13 +268,17 @@ export class HeaderBase extends React.Component {
       </>
     ) : null;
 
+    // for banner ads
+    const { AdComponent } = this.state;
+
     return (
       <header
         className={makeClassName('Header', {
           'Header--loaded-page-is-anonymous': loadedPageIsAnonymous,
         })}
       >
-        {!isAddonInstallPage && !forBlog ? <GetFirefoxBanner /> : null}
+        {/*  Here is where the banner ad goes */}
+        {AdComponent && !isAddonInstallPage && !forBlog && <AdComponent />}
         <div className="Header-wrapper">
           <div className="Header-content">
             {isHomePage ? (

@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
 
-
 import {
   CLIENT_APP_ANDROID,
   CLIENT_APP_FIREFOX,
@@ -25,7 +24,7 @@ import type { UserAgentInfoType } from 'amo/reducers/api';
 import type { AppState } from 'amo/store';
 import type { I18nType } from 'amo/types/i18n';
 import type { ReactRouterLocationType } from 'amo/types/router';
-import PopupManager from 'amo/components/PopupRotatingAds'; 
+import FirefoxImage from './img/fx.svg';
 
 
 import './styles.scss';
@@ -128,15 +127,12 @@ export const GetFirefoxBannerBase = ({
         : i18n.gettext(`To use Android extensions, you'll need
             %(downloadLinkStart)sFirefox for Android%(downloadLinkEnd)s. To
             explore Firefox for desktop add-ons, please %(linkStart)svisit our
-            desktop site%(linkEnd)s.`),
+            desktop site%(linkEnd)s`),
     replacements,
   });
+
   
-   
- 
   return (
-    <div>
-    <PopupManager/>
     <Notice
       className="GetFirefoxBanner"
       dismissible
@@ -145,11 +141,37 @@ export const GetFirefoxBannerBase = ({
       type="warning"
     >
       <span className="GetFirefoxBanner-content">{bannerContent}</span>
-</Notice>
-</div>
+      {/* Insert HTML content here */}
+      <div className="ad">
+        <span className="close-btn" onClick={() => document.querySelector('.ad').style.display='none'}>&times;</span>
+        <div className="popup-content">
+            <div className="image-container">
+                <img src={FirefoxImage} alt="Firefox Logo"  className="product-image" />
+            </div>
+            <div className="text-container">
+                <div className="product-info">
+                    <div className="product-name">
+                        <h1>Firefox</h1>
+                        <h2 className="text-gradient">Simple Browsing</h2>
+                    </div>
+                    <div className="product-description">
+                        <h3>Firefox is your dedicated browser with automatic tracking protection.</h3>
+                    </div>
+                    <div className="product-features">
+                        <h3>In order to use these ads <div className="button-container">
+                            <a href="https://www.mozilla.org/firefox/download/thanks/?s=direct&utm_campaign=amo-fx-cta&utm_content=banner-download-button&utm_medium=referral&utm_source=addons.mozilla.org">
+                                <button id="button">Download Firefox</button>
+                            </a>
+                        </div></h3>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </Notice>
   );
 };
-
 
 function mapStateToProps(state: AppState): PropsFromState {
   return {
