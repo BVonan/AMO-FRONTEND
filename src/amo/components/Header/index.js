@@ -23,6 +23,8 @@ import { CLIENT_APP_FIREFOX } from 'amo/constants';
 import translate from 'amo/i18n/translate';
 import DropdownMenu from 'amo/components/DropdownMenu';
 import DropdownMenuItem from 'amo/components/DropdownMenuItem';
+// import PopupRotatingAds from '../PopupRotatingAds/index';
+
 
 // import FocusAd from '../FocusAd/index';
 // import FirefoxAd from '../FirefoxAd/index';
@@ -42,6 +44,8 @@ const Ads = [
   import('../RelayAd/index'),
   import('../VPNAd/index'),
 ];
+
+// importsrc/amo/components/PopupRotatingAds/index.js
 export class HeaderBase extends React.Component {
   // for banner ad
   constructor(props) {
