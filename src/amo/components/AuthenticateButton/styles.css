@@ -1,5 +1,5 @@
 .downloadFirefox {
-    /* margin-top: 50px; */
+    margin-top: 25px;
     height: 30px;
     width: 150px;
     font-size: small;
@@ -8,10 +8,8 @@
     color: white;
     border-radius: 30px;
     background: linear-gradient(90deg, #AB42E4 40%, #7167E6 60%);
-  
-    &:focus,
-
     
+    &:focus,
     &:hover {
       background: #505486;
     }
