@@ -37,10 +37,10 @@ import './styles.scss';
 const Ads = [
   import('../GetFocusAd/index'),
   // import('../FirefoxAd/index'),
-  import('../GetMonitorAd/index'),
-  import('../GetPocketAd/index'),
-  import('../GetRelayAd/index'),
-  import('../GetVPNAd/index'),
+  // import('../GetMonitorAd/index'),
+  // import('../GetPocketAd/index'),
+  // import('../GetRelayAd/index'),
+  // import('../GetVPNAd/index'),
   import('../PopupRotatingAds/index'),
 ];
 export class HeaderBase extends React.Component {
