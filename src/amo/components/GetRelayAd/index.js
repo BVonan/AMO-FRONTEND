@@ -25,9 +25,8 @@ import type { UserAgentInfoType } from 'amo/reducers/api';
 import type { AppState } from 'amo/store';
 import type { I18nType } from 'amo/types/i18n';
 import type { ReactRouterLocationType } from 'amo/types/router';
-import pocketPhone from './img/pocketPhone.png';
-import pocket from './img/pocket.png';
-
+import relayPhone from './img/relayPhone.png';
+import relay from './img/relay.png';
 
 import './styles.scss';
 
@@ -56,7 +55,7 @@ type InternalProps = {|
   location: ReactRouterLocationType,
 |};
 
-export const GetFirefoxBannerBase = ({
+export const GetRelayAdBase = ({
   _tracking = tracking,
   clientApp,
   i18n,
@@ -139,50 +138,81 @@ export const GetFirefoxBannerBase = ({
 
   return (
     <div>
-      <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`} onClick={dismissAdContent} />
-        <div className="ad">
-          <span className="close-btn" onClick={dismissAdContent}>&times;</span>
-          <div className="popup-content">
-            <div className="image-container">
-              <img src={pocketPhone} alt="Mozilla Focus" className="product-image" />
-            </div>
-            <div className="text-container">
-              <div className="product-info">
+      <div
+        className={`overlay ${showOverlay ? 'show-overlay' : ''}`}
+        onClick={dismissAdContent}
+      />
+      <div className="ad">
+        <span className="close-btn" onClick={dismissAdContent}>
+          &times;
+        </span>
+        <div className="popup-content">
+          <div className="image-container">
+            <img
+              src={relayPhone}
+              alt="Mozilla Focus"
+              className="product-image"
+            />
+          </div>
+          <div className="text-container">
+            <div className="product-info">
               <div className="product-name">
-                <h1>Firefox Pocket <img src={pocket} alt="Firefox Pocket" className="product-imag" /></h1>
-                <h2 className="text-gradient-pocket">An Award-Winning App From Firefox</h2>
+                <h1>
+                  Firefox Relay{' '}
+                  <img
+                    src={relay}
+                    alt="Firefox Pocket"
+                    className="product-imag"
+                  />
+                </h1>
+                <br></br>
+                <h2 className="text-gradient-relay">
+                  Protect your identity with secure phone and email masking
+                </h2>
               </div>
+              <br></br>
               <div className="product-description">
-                <h3>Turn your downtime into quality time. Pocket is the place to save, read and get fueled by the best content on the web.</h3>
+                <h3>
+                  Our secure, easy-to-use email and phone masks help keep your
+                  identity private!
+                </h3>
               </div>
+              <br></br>
               <div className="product-features">
                 <h3>Key Features:</h3>
                 <div className="feature-columns">
                   <div className="feature-column">
                     <ul>
-                    <li> Pocket strips away clutter and saves the page</li>
-                    <li>Organize saved content with tags and folders</li>
-                    <li>Seamless integration across devices</li>
+                      <li>Use Relay email masks and phone masks everywhere</li>
+                      <br />
+                      <li>Manage your masks from your Relay dashboard</li>
                     </ul>
                   </div>
                   <div className="feature-column">
                     <ul>
-                    <li>Discover new content based on interests:</li>
-                    <li>hare saved content with friends and followers</li>
-                    <li>Customizable reading experience</li>
+                      <li>
+                        We’ll forward emails, phone calls, and texts to you
+                      </li>
+                      <br />
+                      <li>
+                        Relay protects your identity and your inbox with unique
+                        email masks
+                      </li>
                     </ul>
                   </div>
                 </div>
                 <div className="button-container">
-                  <a href="https://www.mozilla.org/en-US/firefox/pocket/">
-                    <button className="buttonColorPocket">Get Firefox pocket</button>
+                  <a href="https://relay.firefox.com">
+                    <button className="buttonColorRelay">
+                      Get Firefox Relay{' '}
+                    </button>
                   </a>
                 </div>
               </div>
             </div>
-            </div>
           </div>
         </div>
+      </div>
     </div>
   );
 };
@@ -194,10 +224,10 @@ function mapStateToProps(state: AppState): PropsFromState {
   };
 }
 
-const GetFirefoxBanner: React.ComponentType<Props> = compose(
+const GetRelayAd: React.ComponentType<Props> = compose(
   withRouter,
   connect(mapStateToProps),
   translate(),
-)(GetFirefoxBannerBase);
+)(GetRelayAdBase);
 
-export default GetFirefoxBanner;
+export default GetRelayAd;

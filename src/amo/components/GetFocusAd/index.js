@@ -1,4 +1,3 @@
-/* @flow */
 import React, { useState } from 'react';
 
 import { connect } from 'react-redux';
@@ -25,8 +24,8 @@ import type { UserAgentInfoType } from 'amo/reducers/api';
 import type { AppState } from 'amo/store';
 import type { I18nType } from 'amo/types/i18n';
 import type { ReactRouterLocationType } from 'amo/types/router';
-import relayPhone from './img/relayPhone.png';
-import relay from './img/relay.png';
+import focus from './img/focus.png';
+import focusPhone2 from './img/focusPhone2.png';
 
 import './styles.scss';
 
@@ -55,14 +54,14 @@ type InternalProps = {|
   location: ReactRouterLocationType,
 |};
 
-export const GetFirefoxBannerBase = ({
+export const GetFocusAdBase = ({
   _tracking = tracking,
   clientApp,
   i18n,
   location,
   userAgentInfo,
 }: InternalProps): null | React.Node => {
-  const [showOverlay, setShowOverlay] = useState(true); // State to track overlay visibility
+  const [showAdContent, setShowAdContent] = useState(true); // State to track ad content visibility
 
   const onButtonClick = () => {
     _tracking.sendEvent({
@@ -71,7 +70,11 @@ export const GetFirefoxBannerBase = ({
     });
   };
 
-  if (isFirefox({ userAgentInfo })) {
+  const dismissAdContent = () => {
+    setShowAdContent(false); // Hide ad content when close button is clicked
+  };  
+
+  if (isFirefox({ userAgentInfo }) || !showAdContent) {
     return null;
   }
 
@@ -127,61 +130,55 @@ export const GetFirefoxBannerBase = ({
     replacements,
   });
 
-  const dismissAdContent = () => {
-    // code to dismiss or hide the HTML content
-    const htmlContent = document.querySelector('.ad');
-    if (htmlContent) {
-      htmlContent.style.display = 'none'; // Hide the HTML content
-    }
-    setShowOverlay(false); // Hide overlay when ad content is dismissed
-  };
+  const downloadButton = screen.getByRole('button', { name: /Get Firefox Focus/ });
+
 
   return (
-    <div>
-      <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`} onClick={dismissAdContent} />
-        <div className="ad">
-          <span className="close-btn" onClick={dismissAdContent}>&times;</span>
-          <div className="popup-content">
-            <div className="image-container">
-              <img src={relayPhone} alt="Mozilla Focus" className="product-image" />
-            </div>
-            <div className="text-container">
-            <div className="product-info">
-        <div className="product-name">
-          <h1>Firefox Relay <img src={relay} alt="Firefox Pocket" className="product-imag" /></h1>
-          <h2 className="text-gradient-relay">Protect your identity with secure phone and email masking</h2>
+    <div className="ad">
+      <span className="close-btn" onClick={dismissAdContent} data-testid="close-btn">&times;</span>
+      <div className="popup-content">
+        <div className="image-container">
+          <img src={focusPhone2} alt="Mozilla Focus" className="product-image" />
         </div>
-        <div className="product-description">
-          <h3>Our secure, easy-to-use email and phone masks help keep your identity private!</h3>
-        </div>
-        <div className="product-features">
-          <h3>Key Features:</h3>
-          <div className="feature-columns">
-            <div className="feature-column">
-              <ul>
-              <li>Use Relay email masks and phone masks everywhere</li>
-                                    <br />
-                                    <li>Manage your masks from your Relay dashboard</li>   
-              </ul>
+        <div className="text-container">
+          <div className="product-info">
+            <div className="product-name">
+              <h1>Mozilla Focus <img src={focus} alt="Mozilla focus" className="product-imag" /></h1>
+              <br></br>
+              <h2 className="text-gradient-focus">Simply private mobile browsing</h2>
             </div>
-            <div className="feature-column">
-              <ul>
-              <li>We’ll forward emails, phone calls, and texts to you</li>
-                                    <br />
-                                    <li>Relay protects your identity and your inbox with unique email masks</li>
-              </ul>
+            <br></br>
+            <div className="product-description">
+              <h3>Firefox Focus is your dedicated privacy browser with automatic tracking protection. With Focus, your pages load faster and your data stays private.</h3>
             </div>
-          </div>
-          <div className="button-container">
-          <a href="https://relay.firefox.com">
-              <button className="buttonColorRelay">Get Firefox Relay </button>
-            </a>
+            <br></br>
+            <div className="product-features">
+              <h3>Key Features:</h3>
+              <div className="feature-columns">
+                <div className="feature-column">
+                  <ul>
+                    <li>Easily erase your history, passwords and cookies , so unwanted ads don’t follow you around online</li>
+                    <br />
+                    <li>Firefox Focus offers next-level privacy by default and it’s backed by Mozilla</li>
+                  </ul>
+                </div>
+                <div className="feature-column">
+                  <ul>
+                    <li>Firefox Focus blocks a wide range of common trackers by default including social trackers</li>
+                    <br />
+                    <li>Focus removes trackers so the pages you’re viewing require less data and load much faster</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="button-container">
+                <a href="https://www.mozilla.org/en-US/firefox/browsers/mobile/focus/">
+                  <button className="buttonColorFocus">Get Firefox Focus</button>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-            </div>
-          </div>
-        </div>
     </div>
   );
 };
@@ -193,10 +190,10 @@ function mapStateToProps(state: AppState): PropsFromState {
   };
 }
 
-const GetFirefoxBanner: React.ComponentType<Props> = compose(
+const GetFocusAd: React.ComponentType<Props> = compose(
   withRouter,
   connect(mapStateToProps),
   translate(),
-)(GetFirefoxBannerBase);
+)(GetFocusAdBase);
 
-export default GetFirefoxBanner;
+export default GetFocusAd;

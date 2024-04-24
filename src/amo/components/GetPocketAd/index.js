@@ -1,3 +1,4 @@
+/* @flow */
 import React, { useState } from 'react';
 
 import { connect } from 'react-redux';
@@ -24,8 +25,9 @@ import type { UserAgentInfoType } from 'amo/reducers/api';
 import type { AppState } from 'amo/store';
 import type { I18nType } from 'amo/types/i18n';
 import type { ReactRouterLocationType } from 'amo/types/router';
-import focus from './img/focus.png';
-import focusPhone2 from './img/focusPhone2.png';
+import pocketPhone from './img/pocketPhone.png';
+import pocket from './img/pocket.png';
+
 
 import './styles.scss';
 
@@ -54,7 +56,7 @@ type InternalProps = {|
   location: ReactRouterLocationType,
 |};
 
-export const GetFirefoxBannerBase = ({
+export const GetPocketAdBanner = ({
   _tracking = tracking,
   clientApp,
   i18n,
@@ -142,42 +144,45 @@ export const GetFirefoxBannerBase = ({
           <span className="close-btn" onClick={dismissAdContent}>&times;</span>
           <div className="popup-content">
             <div className="image-container">
-              <img src={focusPhone2} alt="Mozilla Focus" className="product-image" />
+              <img src={pocketPhone} alt="Mozilla Focus" className="product-image" />
             </div>
             <div className="text-container">
               <div className="product-info">
-                <div className="product-name">
-                  <h1>Mozilla Focus <img src={focus} alt="Mozilla focus" className="product-imag" /></h1>
-                  <h2 className="text-gradient-focus">Simply private mobile browsing</h2>
-                </div>
-                <div className="product-description">
-                  <h3>Firefox Focus is your dedicated privacy browser with automatic tracking protection. With Focus, your pages load faster and your data stays private.</h3>
-                </div>
-                <div className="product-features">
-                  <h3>Key Features:</h3>
-                  <div className="feature-columns">
-                    <div className="feature-column">
-                      <ul>
-                        <li>Easily erase your history, passwords and cookies , so unwanted ads don’t follow you around online</li>
-                        <br />
-                        <li>Firefox Focus offers next-level privacy by default and it’s backed by Mozilla</li>
-                      </ul>
-                    </div>
-                    <div className="feature-column">
-                      <ul>
-                        <li>Firefox Focus blocks a wide range of common trackers by default including social trackers</li>
-                        <br />
-                        <li>Focus removes trackers so the pages you’re viewing require less data and load much faster</li>
-                      </ul>
-                    </div>
+              <div className="product-name">
+                <h1>Firefox Pocket <img src={pocket} alt="Firefox Pocket" className="product-imag" /></h1>
+                <br></br>
+                <h2 className="text-gradient-pocket">An Award-Winning App From Firefox</h2>
+              </div>
+              <br></br>
+              <div className="product-description">
+                <h3>Turn your downtime into quality time. Pocket is the place to save, read and get fueled by the best content on the web.</h3>
+              </div>
+              <br></br>
+              <div className="product-features">
+                <h3>Key Features:</h3>
+                <div className="feature-columns">
+                  <div className="feature-column">
+                    <ul>
+                    <li> Pocket strips away clutter and saves the page</li>
+                    <li>Organize saved content with tags and folders</li>
+                    <li>Seamless integration across devices</li>
+                    </ul>
                   </div>
-                  <div className="button-container">
-                    <a href="https://www.mozilla.org/en-US/firefox/browsers/mobile/focus/">
-                      <button className="buttonColorFocus">Get Firefox Focus</button>
-                    </a>
+                  <div className="feature-column">
+                    <ul>
+                    <li>Discover new content based on interests:</li>
+                    <li>hare saved content with friends and followers</li>
+                    <li>Customizable reading experience</li>
+                    </ul>
                   </div>
+                </div>
+                <div className="button-container">
+                  <a href="https://www.mozilla.org/en-US/firefox/pocket/">
+                    <button className="buttonColorPocket">Get Firefox pocket</button>
+                  </a>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>
@@ -192,10 +197,10 @@ function mapStateToProps(state: AppState): PropsFromState {
   };
 }
 
-const GetFirefoxBanner: React.ComponentType<Props> = compose(
+const GetPocketAd: React.ComponentType<Props> = compose(
   withRouter,
   connect(mapStateToProps),
   translate(),
-)(GetFirefoxBannerBase);
+)(GetPocketAdBanner);
 
-export default GetFirefoxBanner;
+export default GetPocketAd;
