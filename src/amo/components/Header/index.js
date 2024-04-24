@@ -26,13 +26,6 @@ import DropdownMenuItem from 'amo/components/DropdownMenuItem';
 // import PopupRotatingAds from '../PopupRotatingAds/index';
 
 
-// import FocusAd from '../FocusAd/index';
-// import FirefoxAd from '../FirefoxAd/index';
-// import MonitorAd from '../MonitorAd/index';
-// import PocketAd from '../PocketAd/index';
-// import RelayAd from '../RelayAd/index';
-// import VPNAd from '../VPNAd/index';
-
 import './styles.scss';
 
 // banner ad imports

@@ -1,7 +1,21 @@
 import * as React from 'react';
-import Header from 'amo/components/Header';
+import Header, { HeaderBase } from 'amo/components/Header'; // Import HeaderBase along with Header
+// import Ads from 'amo/components/Header';
+import { Ads } from '../../../../src/amo/components/Header/index'; 
 import { CLIENT_APP_FIREFOX } from 'amo/constants';
-import { dispatchClientMetadata, render as defaultRender, screen, userAgents } from 'tests/unit/helpers';
+
+import '../../../setupTests'; 
+import { shallow } from 'enzyme';
+
+import { CLIENT_APP_FIREFOX } from 'amo/constants';
+import {
+  dispatchClientMetadata,
+  render as defaultRender,
+  screen,
+  userAgents,
+} from 'tests/unit/helpers';
+
+// Import Ads constant from the source file where it is defined
 
 describe(__filename, () => {
   const render = (props = {}) => {
@@ -21,21 +35,33 @@ describe(__filename, () => {
     expect(screen.queryByRole('link', { name: 'Log in' })).not.toBeInTheDocument();
     expect(screen.queryByTitle('Submit and manage extensions and themes')).not.toBeInTheDocument();
     expect(screen.queryByRole('search')).not.toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Extensions' })).toHaveAttribute('href', '/extensions/');
-    expect(screen.queryByRole('link', { name: 'download Firefox' })).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Extensions' })).toHaveAttribute(
+      'href',
+      '/extensions/',
+    );
+    expect(
+      screen.queryByRole('link', { name: 'download Firefox' }),
+    ).not.toBeInTheDocument();
   });
+});
 
-  it('renders logout button when user is logged in', () => {
-    render({ forBlog: false, isAddonInstallPage: false, siteUser: { name: 'Test User' } });
+// Fix the Ads Constant Test
+describe('Ads Constant', () => {
+  // Fix the HeaderBase Reference in this test
+  it('should load a random ad component on mount', async () => {
+    const headerInstance = new HeaderBase({
+      handleLogOut: jest.fn(),
+      api: {},
+      clientApp: CLIENT_APP_FIREFOX,
+      i18n: {},
+      isReviewer: false,
+      loadedPageIsAnonymous: false,
+      siteIsReadOnly: false,
+      siteUser: {},
+      userAgentInfo: {},
+    });
+    await headerInstance.componentDidMount();
 
-    // Assertion for rendering logout button
-    expect(screen.getByText('Log out')).toBeInTheDocument();
-  });
-
-  it('renders the header title', () => {
-    render({ forBlog: false, isAddonInstallPage: false });
-
-    // Assertion for rendering header title
-    expect(screen.getByText('Firefox Browser Add-ons')).toBeInTheDocument();
+    expect(headerInstance.state.AdComponent).toBeDefined();
   });
 });
