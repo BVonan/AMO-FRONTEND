@@ -74,33 +74,3 @@ describe('Ads Constant', () => {
     expect(headerInstance.state.AdComponent).toBeDefined();
   });
 });
-
-
-// need to fix
-// describe('Header Component', () => {
-//   it('should render correctly with default props', () => {
-//     const wrapper = shallow(<Header />);
-//     expect(wrapper).toMatchSnapshot();
-//   });
-
-//   it('should render correctly for the blog', () => {
-//     const wrapper = shallow(<Header forBlog={true} />);
-//     expect(wrapper).toMatchSnapshot();
-//   });
-
-//   it('should render correctly for an addon install page', () => {
-//     const wrapper = shallow(<Header isAddonInstallPage={true} />);
-//     expect(wrapper).toMatchSnapshot();
-//   });
-
-//   it('should render correctly for an anonymous loaded page', () => {
-//     const wrapper = shallow(<Header loadedPageIsAnonymous={true} />);
-//     expect(wrapper).toMatchSnapshot();
-//   });
-
-//   it('should render correctly for a Firefox client app', () => {
-//     const wrapper = shallow(<Header clientApp={CLIENT_APP_FIREFOX} />);
-//     expect(wrapper).toMatchSnapshot();
-//   });
-
-// });
