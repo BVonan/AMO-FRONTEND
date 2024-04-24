@@ -35,12 +35,12 @@ import './styles.scss';
 
 // banner ad imports
 const Ads = [
-  import('../FocusAd/index'),
+  import('../GetFocusAd/index'),
   // import('../FirefoxAd/index'),
-  import('../MonitorAd/index'),
-  import('../PocketAd/index'),
-  import('../RelayAd/index'),
-  import('../VPNAd/index'),
+  // import('../GetMonitorAd/index'),
+  // import('../GetPocketAd/index'),
+  // import('../GetRelayAd/index'),
+  // import('../GetVPNAd/index'),
   import('../PopupRotatingAds/index'),
 ];
 export class HeaderBase extends React.Component {

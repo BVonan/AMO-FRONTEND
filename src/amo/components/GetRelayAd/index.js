@@ -25,8 +25,8 @@ import type { UserAgentInfoType } from 'amo/reducers/api';
 import type { AppState } from 'amo/store';
 import type { I18nType } from 'amo/types/i18n';
 import type { ReactRouterLocationType } from 'amo/types/router';
-import monitorPhone from './img/monitorPhone2.png';
-import monitor from './img/monitor.png';
+import relayPhone from './img/relayPhone.png';
+import relay from './img/relay.png';
 
 import './styles.scss';
 
@@ -55,7 +55,7 @@ type InternalProps = {|
   location: ReactRouterLocationType,
 |};
 
-export const GetFirefoxBannerBase = ({
+export const GetRelayAdBase = ({
   _tracking = tracking,
   clientApp,
   i18n,
@@ -142,59 +142,77 @@ export const GetFirefoxBannerBase = ({
         className={`overlay ${showOverlay ? 'show-overlay' : ''}`}
         onClick={dismissAdContent}
       />
-        <div className="ad">
-          <span className="close-btn" onClick={dismissAdContent}>&times;</span>
-          <div className="popup-content">
-            <div className="image-container">
-              <img src={monitorPhone} alt="Mozilla Focus" className="product-image" />
-            </div>
-            <div className="text-container">
-              <div className="product-info">
-                <div className="product-name">
+      <div className="ad">
+        <span className="close-btn" onClick={dismissAdContent}>
+          &times;
+        </span>
+        <div className="popup-content">
+          <div className="image-container">
+            <img
+              src={relayPhone}
+              alt="Mozilla Focus"
+              className="product-image"
+            />
+          </div>
+          <div className="text-container">
+            <div className="product-info">
+              <div className="product-name">
                 <h1>
-                  Mozilla Monitor{' '}
+                  Firefox Relay{' '}
                   <img
-                    src={monitor}
-                    alt="Mozilla focus"
+                    src={relay}
+                    alt="Firefox Pocket"
                     className="product-imag"
                   />
                 </h1>
                 <br></br>
-                <h2 className="text-gradient-focus">
-                  Powerful privacy for peace of mind
+                <h2 className="text-gradient-relay">
+                  Protect your identity with secure phone and email masking
                 </h2>
+              </div>
+              <br></br>
+              <div className="product-description">
+                <h3>
+                  Our secure, easy-to-use email and phone masks help keep your
+                  identity private!
+                </h3>
+              </div>
+              <br></br>
+              <div className="product-features">
+                <h3>Key Features:</h3>
+                <div className="feature-columns">
+                  <div className="feature-column">
+                    <ul>
+                      <li>Use Relay email masks and phone masks everywhere</li>
+                      <br />
+                      <li>Manage your masks from your Relay dashboard</li>
+                    </ul>
+                  </div>
+                  <div className="feature-column">
+                    <ul>
+                      <li>
+                        We’ll forward emails, phone calls, and texts to you
+                      </li>
+                      <br />
+                      <li>
+                        Relay protects your identity and your inbox with unique
+                        email masks
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <br></br>
-                <div className="product-features">
-          <h3>Key Features:</h3>
-          <div className="feature-columns">
-            <div className="feature-column">
-              <ul>
-              <li>Secure and private browsing</li>
-              <li>Scan 190 data broker sites that may be selling your personal info</li>
-              <li>Remove personal info from sites that are selling it</li>
-              </ul>
-            </div>
-            <div className="feature-column">
-              <ul>
-              <li>Get alerts when your data has been breached</li>
-              <li>Fix high-risk data breaches</li>
-                      <li>Continuous monitoring</li>
-              </ul>
-            </div>
-          </div>
                 <div className="button-container">
-            <a href="https://monitor.mozilla.org">
-                    <button className="buttonColorMonitor">
-                      Get Mozilla Monitor
+                  <a href="https://relay.firefox.com">
+                    <button className="buttonColorRelay">
+                      Get Firefox Relay{' '}
                     </button>
-            </a>
-          </div>
-        </div>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
     </div>
   );
 };
@@ -206,10 +224,10 @@ function mapStateToProps(state: AppState): PropsFromState {
   };
 }
 
-const GetFirefoxBanner: React.ComponentType<Props> = compose(
+const GetRelayAd: React.ComponentType<Props> = compose(
   withRouter,
   connect(mapStateToProps),
   translate(),
-)(GetFirefoxBannerBase);
+)(GetRelayAdBase);
 
-export default GetFirefoxBanner;
+export default GetRelayAd;

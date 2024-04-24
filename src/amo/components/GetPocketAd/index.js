@@ -56,7 +56,7 @@ type InternalProps = {|
   location: ReactRouterLocationType,
 |};
 
-export const GetFirefoxBannerBase = ({
+export const GetPocketAdBanner = ({
   _tracking = tracking,
   clientApp,
   i18n,
@@ -197,10 +197,10 @@ function mapStateToProps(state: AppState): PropsFromState {
   };
 }
 
-const GetFirefoxBanner: React.ComponentType<Props> = compose(
+const GetPocketAd: React.ComponentType<Props> = compose(
   withRouter,
   connect(mapStateToProps),
   translate(),
-)(GetFirefoxBannerBase);
+)(GetPocketAdBanner);
 
-export default GetFirefoxBanner;
+export default GetPocketAd;
