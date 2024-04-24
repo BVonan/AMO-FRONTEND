@@ -41,7 +41,10 @@ const PopupManager = () => {
   };
 
   const closePopup = () => {
-    setIsHovered(true);
+    const popups = document.querySelectorAll('.popup');
+    if (popups[currentIndex]) {
+      popups[currentIndex].style.display = 'none';
+    }
   };
 
   const VPNAdText = `Surf, stream and get work done on servers in over 30 countries 
