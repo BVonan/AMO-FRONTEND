@@ -25,7 +25,7 @@ import type { UserAgentInfoType } from 'amo/reducers/api';
 import type { AppState } from 'amo/store';
 import type { I18nType } from 'amo/types/i18n';
 import type { ReactRouterLocationType } from 'amo/types/router';
-import monitorPhone from './img/monitorPhone2.png';
+import monitorPhone from './img/monitorPhone3.png';
 import monitor from './img/monitor.png';
 
 import './styles.scss';

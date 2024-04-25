@@ -1,3 +1,4 @@
+/* @flow */
 import React, { useState } from 'react';
 
 import { connect } from 'react-redux';
@@ -27,6 +28,7 @@ import type { ReactRouterLocationType } from 'amo/types/router';
 import focus from './img/focus.png';
 import focusPhone2 from './img/focusPhone2.png';
 
+
 import './styles.scss';
 
 export const GET_FIREFOX_BANNER_CLICK_ACTION = 'download-firefox-banner-click';
@@ -54,14 +56,14 @@ type InternalProps = {|
   location: ReactRouterLocationType,
 |};
 
-export const GetFocusAdBase = ({
+export const GetPocketAdBanner = ({
   _tracking = tracking,
   clientApp,
   i18n,
   location,
   userAgentInfo,
 }: InternalProps): null | React.Node => {
-  const [showAdContent, setShowAdContent] = useState(true); // State to track ad content visibility
+  const [showOverlay, setShowOverlay] = useState(true); // State to track overlay visibility
 
   const onButtonClick = () => {
     _tracking.sendEvent({
@@ -70,11 +72,7 @@ export const GetFocusAdBase = ({
     });
   };
 
-  const dismissAdContent = () => {
-    setShowAdContent(false); // Hide ad content when close button is clicked
-  };  
-
-  if (isFirefox({ userAgentInfo }) || !showAdContent) {
+  if (isFirefox({ userAgentInfo })) {
     return null;
   }
 
@@ -130,10 +128,18 @@ export const GetFocusAdBase = ({
     replacements,
   });
 
-  const downloadButton = screen.getByRole('button', { name: /Get Firefox Focus/ });
+  const dismissAdContent = () => {
+    // code to dismiss or hide the HTML content
+    const htmlContent = document.querySelector('.ad');
+    if (htmlContent) {
+      htmlContent.style.display = 'none'; // Hide the HTML content
+    }
+    setShowOverlay(false); // Hide overlay when ad content is dismissed
+  };
 
-
-  return (
+    return (
+      <div>
+      <div className={`overlay ${showOverlay ? 'show-overlay' : ''}`} onClick={dismissAdContent} />
     <div className="ad">
       <span className="close-btn" onClick={dismissAdContent} data-testid="close-btn">&times;</span>
       <div className="popup-content">
@@ -144,20 +150,17 @@ export const GetFocusAdBase = ({
           <div className="product-info">
             <div className="product-name">
               <h1>Mozilla Focus <img src={focus} alt="Mozilla focus" className="product-imag" /></h1>
-              <br></br>
               <h2 className="text-gradient-focus">Simply private mobile browsing</h2>
             </div>
-            <br></br>
             <div className="product-description">
               <h3>Firefox Focus is your dedicated privacy browser with automatic tracking protection. With Focus, your pages load faster and your data stays private.</h3>
             </div>
-            <br></br>
             <div className="product-features">
               <h3>Key Features:</h3>
               <div className="feature-columns">
                 <div className="feature-column">
                   <ul>
-                    <li>Easily erase your history, passwords and cookies , so unwanted ads don’t follow you around online</li>
+                    <li>Easily erase your history, passwords and cookies so unwanted ads don’t follow you around online</li>
                     <br />
                     <li>Firefox Focus offers next-level privacy by default and it’s backed by Mozilla</li>
                   </ul>
@@ -180,6 +183,7 @@ export const GetFocusAdBase = ({
         </div>
       </div>
     </div>
+  </div>
   );
 };
 
@@ -190,10 +194,10 @@ function mapStateToProps(state: AppState): PropsFromState {
   };
 }
 
-const GetFocusAd: React.ComponentType<Props> = compose(
+const GetPocketAd: React.ComponentType<Props> = compose(
   withRouter,
   connect(mapStateToProps),
   translate(),
-)(GetFocusAdBase);
+)(GetPocketAdBanner);
 
-export default GetFocusAd;
+export default GetPocketAd;
