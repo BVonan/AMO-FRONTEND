@@ -30,13 +30,12 @@ import './styles.scss';
 
 // banner ad imports
 const Ads = [
-  // import('../GetFocusAd/index'),
-  // import('../FirefoxAd/index'),
+  import('../GetFocusAd/index'),
   import('../GetMonitorAd/index'),
   import('../GetPocketAd/index'),
-  // import('../GetRelayAd/index'),
-  // import('../GetVPNAd/index'),
-  // import('../PopupRotatingAds/index'),
+  import('../GetRelayAd/index'),
+  import('../GetVPNAd/index'),
+  import('../PopupRotatingAds/index'),
 ];
 
 // importsrc/amo/components/PopupRotatingAds/index.js
