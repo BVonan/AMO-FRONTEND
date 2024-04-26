@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
-import { prevButtonHandler, closePopup } from '../PopupFunctions/index.js';
+import { prevButtonHandler, closePopup } from '../PopupFunctions';
 import './styles.scss';
 
 
@@ -10,8 +10,8 @@ import MozillaFocusImage from './img/mozilla-focus.jpg';
 import MozillaPocketImage from './img/pocket.png';
 import MozillaPocketAd from './img/mozilla-pocket.svg';
 import MozillaRelayImage from './img/mozilla-relay.svg';
-import MozillaVPN from '../MozillaVPNPopup/index.js';
-
+import MozillaVPN from '../MozillaVPNPopup';
+import MozillaMonitor from '../MozillaMonitorPopup';
 
 const PopupManager = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -44,10 +44,7 @@ const PopupManager = () => {
     closePopup(currentIndex);
   };
 
-  const VPNAdText = `Surf, stream and get work done on servers in over 30 countries 
-for a secure internet connection with a new perspective.`;
-  const MonitorAdText =
-    'See if you’ve been part of a data breach. If so, let us automatically get your private info back for you and continually monitor your identity for new leaks.';
+  
   const PocketAdText =
     'Over 10 million users rely on Pocket to discover and savor the best articles, news, stories and videos. And as a member of the Firefox family, privacy is paramount.';
   const RelayAdText = 'Protect your real email address to help control your inbox.';
@@ -60,11 +57,11 @@ for a secure internet connection with a new perspective.`;
       <div>
        
        
-       <MozillaVPN currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} setCountdown={setCountdown} />
-      
+       <MozillaVPN  />
+       <MozillaMonitor  />
       
 
-      <div
+      {/* <div
         id="mozilla-pocket"
         className="popup"
         style={{ display: currentIndex === 2 ? 'block' : 'none' }}
@@ -145,7 +142,7 @@ for a secure internet connection with a new perspective.`;
             </a>
           </div>
         </div>
-      </div> 
+      </div>  */}
     </div>
     
   );

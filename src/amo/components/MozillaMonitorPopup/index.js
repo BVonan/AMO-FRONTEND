@@ -4,14 +4,18 @@ import MozillaMonitorImage from './img/Monitor_Icon.svg';
 import MozillaMonitorAd from './img/monitor-ad.svg';
 import './styles.scss'
 
-const MozillaMonitor = ({ currentIndex, setCurrentIndex, setCountdown }) => {
-    const VPNAdText = `Surf, stream and get work done on servers in over 30 countries 
-    for a secure internet connection with a new perspective.`;
+const MozillaMonitor = () => {
+    
+    const [isHovered, setIsHovered] = useState(false);
+    const [countdown, setCountdown] = useState(10);
+    
+    const MonitorAdText =
+    'See if you’ve been part of a data breach. If so, let us automatically get your private info back for you and continually monitor your identity for new leaks.';
+  
     const handlePrevButtonClick = () => {
         prevButtonHandler(currentIndex, setCurrentIndex, setCountdown);
       };
     
-      // Function to handle the close button click
       const handleCloseButtonClick = () => {
         closePopup(currentIndex);
       };
