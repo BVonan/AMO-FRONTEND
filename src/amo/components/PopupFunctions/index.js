@@ -1,3 +1,5 @@
+
+
 export const prevButtonHandler = (currentIndex, setCurrentIndex, setCountdown) => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + 5) % 5);
     setCountdown(10);
