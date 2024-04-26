@@ -45,30 +45,28 @@ export const GetFcousAdBanner = ({
 
   const dismissAdContent = () => {
     // code to dismiss or hide the HTML content
-    const htmlContent = document.querySelector('.ad');
+    const htmlContent = document.querySelector('.image-container-focus');
     if (htmlContent) {
       htmlContent.style.display = 'none'; // Hide the HTML content
     }
     setShowOverlay(false); // Hide overlay when ad content is dismissed
   };
 
+
   return (
-    <AdContainer showOverlay={showOverlay} dismissAdContent={dismissAdContent}>
-      <div className="image-container">
+    <AdContainer showOverlay={showOverlay} dismissAdContent={dismissAdContent} adClassName="focus-ad" popupClassName="focus-popup">
+      <div className="image-container-focus">
         <img src={focusPhone2} alt="Mozilla Focus" className="product-image" />
       </div>
       <div className="text-container">
         <div className="product-info">
           <div className="product-name">
             <h1>Mozilla Focus <img src={focus} alt="Mozilla focus" className="product-imag" /></h1>
-            <br></br>
             <h2 className="text-gradient-focus">Simply private mobile browsing</h2>
           </div>
-          <br></br>
           <div className="product-description">
             <h3>Firefox Focus is your dedicated privacy browser with automatic tracking protection. With Focus, your pages load faster and your data stays private.</h3>
           </div>
-          <br></br>
           <div className="product-features">
             <h3>Key Features:</h3>
             <div className="feature-columns">

@@ -51,7 +51,7 @@ export const GetRelayAdBase = ({
   };
 
   return (
-    <AdContainer showOverlay={showOverlay} dismissAdContent={dismissAdContent}>
+    <AdContainer showOverlay={showOverlay} dismissAdContent={dismissAdContent} adClassName="relay-ad" popupClassName="relay-popup">
       <div className="image-container">
         <img
           src={relayPhone}
@@ -70,19 +70,16 @@ export const GetRelayAdBase = ({
                 className="product-imag"
               />
             </h1>
-            <br />
             <h2 className="text-gradient-relay">
               Protect your identity with secure phone and email masking
             </h2>
           </div>
-          <br />
           <div className="product-description">
             <h3>
               Our secure, easy-to-use email and phone masks help keep your
               identity private!
             </h3>
           </div>
-          <br />
           <div className="product-features">
             <h3>Key Features:</h3>
             <div className="feature-columns">
@@ -109,7 +106,7 @@ export const GetRelayAdBase = ({
             <div className="button-container">
               <a href="https://relay.firefox.com">
                 <button className="buttonColorRelay">
-                  Get Firefox Relay{' '}
+                  Get Firefox Relay
                 </button>
               </a>
             </div>

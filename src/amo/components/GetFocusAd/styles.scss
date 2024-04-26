@@ -23,8 +23,7 @@ body {
 }
 
 
-
-.ad {
+.focus-ad {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -37,7 +36,7 @@ body {
   width: 1000px;
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
-  height: 90%;
+  height: 85%;
 }
 
 .product-name h1 {

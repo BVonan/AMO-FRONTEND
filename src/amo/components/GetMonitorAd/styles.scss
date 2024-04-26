@@ -3,23 +3,22 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7d4;
     text-align: center;
   }
   
-  .ad {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    width: 1000px;
-    background-color: #f8f4fc;
-  }
+.monitor-ad {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 1000px;
+  height: 80%;
+}
   
   .product-name h1 {
     font-size: 50px;
@@ -43,7 +42,7 @@ body {
     height: auto; 
   }
   
-  .text-gradient-monitor {
+  .text-gradient-Monitor {
     background-image: linear-gradient(to right, #6610f2, #f22e10);
     -webkit-background-clip: text;
     background-clip: text;

@@ -4,12 +4,13 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
-
 import tracking from 'amo/tracking';
 import translate from 'amo/i18n/translate';
 import type { AppState } from 'amo/store';
 import AdContainer from '../AdComponent/AdComponent';
-
+import monitorPhone from './img/monitorPhone3.png';
+import monitor from './img/monitor.png';
+import './styles.scss';
 
 export type Props = {||};
 
@@ -51,7 +52,7 @@ export const GetMonitorAdBanner = ({
   };
 
   return (
-    <AdContainer showOverlay={showOverlay} dismissAdContent={dismissAdContent}>
+    <AdContainer showOverlay={showOverlay} dismissAdContent={dismissAdContent} adClassName="monitor-ad" popupClassName="monitor-popup">
       <div className="image-container">
               <img src={monitorPhone} alt="Mozilla Monitor" className="product-image" />
             </div>

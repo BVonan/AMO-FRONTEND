@@ -34,7 +34,7 @@ const Ads = [
   import('../GetMonitorAd/index'),
   import('../GetPocketAd/index'),
   import('../GetRelayAd/index'),
-  // import('../GetVPNAd/index'),
+  import('../GetVPNAd/index'),
   // import('../PopupRotatingAds/index'),
 ];
 
