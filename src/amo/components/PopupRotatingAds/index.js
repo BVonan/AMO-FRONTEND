@@ -4,14 +4,14 @@ import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
 import { prevButtonHandler, closePopup } from '../PopupFunctions/index.js';
 import './styles.scss';
-import MozillaVPNImage from './img/mozilla-vpn-brand.svg';
-import MozillaVPNAd from './img/mozilla-vpn.svg';
-import MozillaMonitorImage from './img/Monitor_Icon.svg';
-import MozillaMonitorAd from './img/monitor-ad.svg';
+
+
 import MozillaFocusImage from './img/mozilla-focus.jpg';
 import MozillaPocketImage from './img/pocket.png';
 import MozillaPocketAd from './img/mozilla-pocket.svg';
 import MozillaRelayImage from './img/mozilla-relay.svg';
+import MozillaVPN from '../MozillaVPNPopup/index.js';
+
 
 const PopupManager = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -59,36 +59,10 @@ for a secure internet connection with a new perspective.`;
     
       <div>
        
-     
+       
+       <MozillaVPN currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} setCountdown={setCountdown} />
       
-      <div id="mozilla-monitor" className="popup" style={{ display: currentIndex === 1 ? 'block' : 'none' }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <div className="popup-content2">
-          <button className="closebtn" id="close-chat2" onClick={closePopup}>X</button>
-          <button id="prevButton2" className="toggleButton" onClick={prevButtonHandler}>Previous Ad</button>
-          <div className="progress-bar-container">
-        <div className="progress-bar2" style={{ width: `${progress}%` }}/></div>
-          <div className="ad-area2">
-            <div className="ad-title2">
-              <div className="title2">
-                Mozilla Monitor
-                <img className="monitor-logo" src={MozillaMonitorImage} alt="mozilla-monitor" />
-              </div>
-            </div>
-            <div id="ad-view">
-              <img className="monitor-ad-pic" src={MozillaMonitorAd} alt="mozilla-monitor-ad" />
-              <div className="text2">
-                <h5><b>{MonitorAdText}</b></h5>
-              </div>
-            </div>
-            <a href="https://monitor.mozilla.org/?utm_source=www.mozilla.org&utm_medium=referral&utm_campaign=products">
-              <button className="button-78" role="button">Check for Breaches NOW!</button>
-            </a>
-          </div>
-        </div>
-      </div>      
+      
 
       <div
         id="mozilla-pocket"

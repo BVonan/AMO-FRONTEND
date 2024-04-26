@@ -2,11 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { prevButtonHandler, closePopup } from '../PopupFunctions/index.js';
 import MozillaVPNImage from './img/mozilla-vpn-brand.svg';
 import MozillaVPNAd from './img/mozilla-vpn.svg';
+import './styles.scss'
 
 const MozillaVPN = ({ currentIndex, setCurrentIndex, setCountdown }) => {
     const VPNAdText = `Surf, stream and get work done on servers in over 30 countries 
     for a secure internet connection with a new perspective.`;
+    const handlePrevButtonClick = () => {
+        prevButtonHandler(currentIndex, setCurrentIndex, setCountdown);
+      };
     
+      // Function to handle the close button click
+      const handleCloseButtonClick = () => {
+        closePopup(currentIndex);
+      };
+
     const progress = ((10 - countdown) * 100) / 10;
   
     return (
