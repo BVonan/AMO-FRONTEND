@@ -43,8 +43,6 @@ export const GetFcousAdBanner = ({
 }: InternalProps): null | React.Node => {
   const [showOverlay, setShowOverlay] = useState(true); // State to track overlay visibility
 
-
-
   const dismissAdContent = () => {
     // code to dismiss or hide the HTML content
     const htmlContent = document.querySelector('.ad');
@@ -53,7 +51,6 @@ export const GetFcousAdBanner = ({
     }
     setShowOverlay(false); // Hide overlay when ad content is dismissed
   };
-
 
   return (
     <AdContainer showOverlay={showOverlay} dismissAdContent={dismissAdContent}>
