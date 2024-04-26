@@ -167,16 +167,23 @@ export class LanguageToolsBase extends React.Component<InternalProps> {
             option to your spell-checker, which checks your spelling as you
             type in Firefox.`)}
           </p>
+
+          <br />
+
           <p className='dictionaryText2'>
             {i18n.gettext(`Language packs change your browser's interface
             language, including menu options and settings.`)}
           </p>
 
+          <br />
+
           {this.languageToolsInYourLocale()}
 
+          <br/>
           <h2 className="LanguageTools-header">
             {i18n.gettext('All Locales')}
           </h2>
+          <br/>
           
           <Table className="LanguageTools-table">
             <Thead>

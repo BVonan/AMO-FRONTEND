@@ -18,6 +18,7 @@ $cell-padding: 6px;
   width: max-content;
   height: max-content;
   width: 100%;
+  text-align: left;
   
 }
 
@@ -99,8 +100,11 @@ $cell-padding: 6px;
 .dictionaryText, .dictionaryText2{
   width: 50%;
   line-height: 1.5;
-  font-size: 20px;
+  font-size: 18px; 
+  left: abs($number: 5);
   // font-weight: bold;
+  text-align: left;
+  height: 100%;
 }
 
 // card header text 
@@ -118,4 +122,5 @@ $cell-padding: 6px;
   width: 48%;
   opacity: 70%;
   border-radius:20px;
+  text-align: left;
 }
