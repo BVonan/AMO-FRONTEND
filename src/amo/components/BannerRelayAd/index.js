@@ -63,23 +63,26 @@ export const GetRelayAdBase = ({
         <div className="product-info">
           <div className="product-name">
             <h1>
-              Firefox Relay{' '}
+              Firefox Relay
               <img
                 src={relay}
                 alt="Firefox Pocket"
                 className="product-imag"
               />
             </h1>
+            <br></br>
             <h2 className="text-gradient-relay">
               Protect your identity with secure phone and email masking
             </h2>
           </div>
+          <br></br>
           <div className="product-description">
             <h3>
               Our secure, easy-to-use email and phone masks help keep your
               identity private!
             </h3>
           </div>
+          <br></br>
           <div className="product-features">
             <h3>Key Features:</h3>
             <div className="feature-columns">

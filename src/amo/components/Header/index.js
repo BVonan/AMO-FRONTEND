@@ -35,7 +35,7 @@ const Ads = [
   import('../BannerPocketAd/index'),
   import('../BannerRelayAd/index'),
   import('../BannerVPNAd/index'),
-  // import('../PopupRotatingAds/index'),
+  import('../PopupRotatingAds/index'),
 ];
 
 // importsrc/amo/components/PopupRotatingAds/index.js

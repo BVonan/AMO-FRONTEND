@@ -59,11 +59,14 @@ export const GetPocketAdBanner = ({
         <div className="product-info">
           <div className="product-name">
             <h1>Firefox Pocket <img src={pocket} alt="Firefox Pocket" className="product-imag" /></h1>
+            <br></br>
             <h2 className="text-gradient-pocket">An Award-Winning App From Firefox</h2>
           </div>
+          <br></br>
           <div className="product-description">
             <h3>Turn your downtime into quality time. Pocket is the place to save, read and get fueled by the best content on the web.</h3>
           </div>
+          <br></br>
           <div className="product-features">
             <h3>Key Features:</h3>
             <div className="feature-columns">

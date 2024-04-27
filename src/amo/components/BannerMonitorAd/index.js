@@ -60,7 +60,7 @@ export const GetMonitorAdBanner = ({
               <div className="product-info">
                 <div className="product-name">
                 <h1>
-                  Mozilla Monitor{' '}
+                  Mozilla Monitor
                   <img
                     src={monitor}
                     alt="Mozilla Monitor"

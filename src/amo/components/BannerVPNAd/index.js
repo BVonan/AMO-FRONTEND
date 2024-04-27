@@ -59,11 +59,14 @@ export const GetVPNAdBase = ({
       <div className="product-info">
         <div className="product-name">
           <h1>Mozilla VPN <img src={vpn} alt="Mozilla VPN" className="product-imag"/></h1>
+          <br></br>
           <h2 className="text-gradient-vpn">Powerful privacy for peace of mind</h2>
         </div>
+        <br></br>
         <div className="product-description">
           <h3>Protect your online privacy with Mozilla's amazing VPN. Stay safe and secure while browsing the web.</h3>
         </div>
+        <br></br>
         <div className="product-features">
           <h3>Key Features:</h3>
           <div className="feature-columns">
