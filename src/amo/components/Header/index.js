@@ -30,11 +30,11 @@ import './styles.scss';
 
 // banner ad imports
 const Ads = [
-  import('../GetFocusAd/index'),
-  import('../GetMonitorAd/index'),
-  import('../GetPocketAd/index'),
-  import('../GetRelayAd/index'),
-  import('../GetVPNAd/index'),
+  import('../BannerFocusAd/index'),
+  import('../BannerMonitorAd/index'),
+  import('../BannerPocketAd/index'),
+  import('../BannerRelayAd/index'),
+  import('../BannerVPNAd/index'),
   // import('../PopupRotatingAds/index'),
 ];
 
