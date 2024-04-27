@@ -3,20 +3,20 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
 import { prevButtonHandler, closePopup } from '../PopupFunctions';
-import './styles.scss';
+// import './styles.scss';
 
 
 import MozillaFocusImage from './img/mozilla-focus.jpg';
 import MozillaPocketImage from './img/pocket.png';
 import MozillaPocketAd from './img/mozilla-pocket.svg';
 import MozillaRelayImage from './img/mozilla-relay.svg';
-import MozillaVPN from '../MozillaVPNPopup';
-import MozillaMonitor from '../MozillaMonitorPopup';
+import MozillaVPN from '../MozillaVPNPopup/index.js';
+import MozillaMonitor from '../MozillaMonitorPopup/index.js';
 
 const PopupManager = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-  const [countdown, setCountdown] = useState(10);
+  // const [currentIndex, setCurrentIndex] = useState(0);
+  // const [isHovered, setIsHovered] = useState(false);
+  // const [countdown, setCountdown] = useState(10);
 
   useEffect(() => {
     const timerInterval = setInterval(() => {
@@ -35,15 +35,6 @@ const PopupManager = () => {
     return () => clearInterval(timerInterval);
   }, [isHovered]);
 
-  const handlePrevButtonClick = () => {
-    prevButtonHandler(currentIndex, setCurrentIndex, setCountdown);
-  };
-
-  // Function to handle the close button click
-  const handleCloseButtonClick = () => {
-    closePopup(currentIndex);
-  };
-
   
   const PocketAdText =
     'Over 10 million users rely on Pocket to discover and savor the best articles, news, stories and videos. And as a member of the Firefox family, privacy is paramount.';
@@ -57,8 +48,16 @@ const PopupManager = () => {
       <div>
        
        
-       <MozillaVPN  />
-       <MozillaMonitor  />
+       <MozillaVPN
+        currentIndex={currentIndex}
+        setCurrentIndex={setCurrentIndex}
+        setCountdown={setCountdown}
+      />
+      <MozillaMonitor
+        currentIndex={currentIndex}
+        setCurrentIndex={setCurrentIndex}
+        setCountdown={setCountdown}
+      />
       
 
       {/* <div

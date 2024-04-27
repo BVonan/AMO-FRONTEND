@@ -4,10 +4,9 @@ import MozillaMonitorImage from './img/Monitor_Icon.svg';
 import MozillaMonitorAd from './img/monitor-ad.svg';
 import './styles.scss'
 
-const MozillaMonitor = () => {
+const MozillaMonitor = ({ currentIndex, setCurrentIndex, setCountdown }) => {
     
-    const [isHovered, setIsHovered] = useState(false);
-    const [countdown, setCountdown] = useState(10);
+  const [isHovered, setIsHovered] = useState(false);
     
     const MonitorAdText =
     'See if you’ve been part of a data breach. If so, let us automatically get your private info back for you and continually monitor your identity for new leaks.';

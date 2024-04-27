@@ -4,11 +4,10 @@ import MozillaVPNImage from './img/mozilla-vpn-brand.svg';
 import MozillaVPNAd from './img/mozilla-vpn.svg';
 import './styles.scss'
 
-const MozillaVPN = () => {
+const MozillaVPN = ({ currentIndex, setCurrentIndex, setCountdown }) => {
 
   const [isHovered, setIsHovered] = useState(false);
-  const [countdown, setCountdown] = useState(10);
-
+  
     const VPNAdText = `Surf, stream and get work done on servers in over 30 countries 
     for a secure internet connection with a new perspective.`;
     const handlePrevButtonClick = () => {
