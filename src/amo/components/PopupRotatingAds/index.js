@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 // Import individual advertisement components
 import PopupVPN from '../PopupVPN/PopupVPN';
-// import PopupMonitor from './MonitorAd';
+import PopupMonitor from '../PopupMonitor/PopupMonitor';
 // import PopupPocket from './PocketAd';
 // import PopupRelay from './RelayAd';
 // import PopupFocus from './FocusAd';
@@ -40,7 +40,10 @@ const PopupManager = () => {
   };
 
   const closePopup = () => {
-    // Handle popup close
+    const popups = document.querySelectorAll('.popup');
+    if (popups[currentIndex]) {
+      popups[currentIndex].style.display = 'none';
+    }
   };
 
   const progress = ((10 - countdown) * 100) / 10;
@@ -55,14 +58,14 @@ const PopupManager = () => {
         prevButtonHandler={prevButtonHandler}
         progress={progress}
       />
-      {/* <MonitorAd
+      <PopupMonitor
         display={currentIndex === 1 ? 'block' : 'none'}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         closePopup={closePopup}
         prevButtonHandler={prevButtonHandler}
         progress={progress}
-      /> */}
+      />
       
     </div>
   );

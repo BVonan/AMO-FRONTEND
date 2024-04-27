@@ -1,4 +1,3 @@
-// VPNAd.js
 import React from 'react';
 import PropTypes from 'prop-types';
 import MozillaVPNImage from './img/mozilla-vpn-brand.svg';
