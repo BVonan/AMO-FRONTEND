@@ -6,8 +6,8 @@ import { withRouter } from 'react-router-dom';
 import PopupVPN from '../PopupVPN/PopupVPN';
 import PopupMonitor from '../PopupMonitor/PopupMonitor';
 import PopupPocket from '../PopupPocket/PopupPocket';
-// import PopupRelay from './RelayAd';
-// import PopupFocus from './FocusAd';
+import PopupRelay from '../PopupRelay/PopupRelay';
+import PopupFocus from '../PopupFocus/PopupFocus';
 
 import './styles.scss';
 
@@ -74,9 +74,22 @@ const PopupManager = () => {
         prevButtonHandler={prevButtonHandler}
         progress={progress}
       />
-
-
-      
+      <PopupRelay
+        display={currentIndex === 3 ? 'block' : 'none'}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        closePopup={closePopup}
+        prevButtonHandler={prevButtonHandler}
+        progress={progress}
+      />
+      <PopupFocus
+        display={currentIndex === 4 ? 'block' : 'none'}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        closePopup={closePopup}
+        prevButtonHandler={prevButtonHandler}
+        progress={progress}
+      />      
     </div>
   );
 };
