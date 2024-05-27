@@ -304,7 +304,7 @@
     "mock-express-response": "^0.3.0",
     "node-fetch": "^3.3.2",
     "node-sass": "^9.0.0",
-    "nodemon": "^3.0.2",
+    "nodemon": "^3.1.1",
     "pino-devtools": "^2.8.0",
     "pino-pretty": "^10.3.1",
     "postcss": "^8.4.33",
